@@ -8,7 +8,7 @@ Reference: NS-SEP-001
 Date: 2026-09-04
 Merchant: Juniper Table
 Employee: Maya Chen
-Amount: USD 114.00
+Amount: USD 121.40
 
 Team dinner submitted as $100.00 meal plus $21.40 tip.
 

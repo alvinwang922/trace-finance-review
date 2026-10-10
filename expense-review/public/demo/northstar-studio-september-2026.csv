@@ -1,5 +1,5 @@
 id,groupId,date,merchant,employee,source,amount,currency,description,reference
-G01-E01,G01,2026-09-04,Juniper Table,Maya Chen,expense,114.00,USD,Team dinner submitted as $100.00 meal plus $21.40 tip.,NS-SEP-001
+G01-E01,G01,2026-09-04,Juniper Table,Maya Chen,expense,121.40,USD,Team dinner submitted as $100.00 meal plus $21.40 tip.,NS-SEP-001
 G01-R01,G01,2026-09-04,Juniper Table,Maya Chen,receipt,112.00,USD,Meal $100.00; gratuity $12.00; total $112.00.,NS-SEP-001
 G01-C01,G01,2026-09-05,Juniper Table,Maya Chen,card,112.00,USD,Posted card charge for team dinner.,NS-SEP-001
 G02-O01,G02,2026-09-07,Pine & Paper Supply,Jordan Ellis,order,300.00,USD,Original supply order: two shipments totaling $300.00 before a later return.,NS-SEP-002
