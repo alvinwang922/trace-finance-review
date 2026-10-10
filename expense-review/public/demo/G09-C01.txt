@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+POSTED CARD RECORD
+Record ID: G09-C01
+Case group: G09
+Reference: NS-SEP-009
+Date: 2026-09-24
+Merchant: Willow Rail
+Employee: Alex Morgan
+Amount: USD 62.00
+
+Posted return-ticket charge.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

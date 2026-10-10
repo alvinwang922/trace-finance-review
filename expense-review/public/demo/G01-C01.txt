@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+POSTED CARD RECORD
+Record ID: G01-C01
+Case group: G01
+Reference: NS-SEP-001
+Date: 2026-09-05
+Merchant: Juniper Table
+Employee: Maya Chen
+Amount: USD 112.00
+
+Posted card charge for team dinner.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

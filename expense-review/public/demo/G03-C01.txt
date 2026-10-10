@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+POSTED CARD RECORD
+Record ID: G03-C01
+Case group: G03
+Reference: NS-SEP-003
+Date: 2026-09-15
+Merchant: Lumen Workshop
+Employee: Maya Chen
+Amount: USD 268.50
+
+Posted card charge for workshop materials.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+EXPENSE SUBMISSION
+Record ID: G02-E01
+Case group: G02
+Reference: NS-SEP-002
+Date: 2026-09-17
+Merchant: Pine & Paper Supply
+Employee: Jordan Ellis
+Amount: USD 260.00
+
+Net expense after $300.00 in shipments less a $40.00 posted refund.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

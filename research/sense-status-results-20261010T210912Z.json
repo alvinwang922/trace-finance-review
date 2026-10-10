@@ -1,0 +1,99 @@
+{
+  "started_at_utc": "2026-10-10T21:09:11.293147+00:00",
+  "retrieved_at_utc": "2026-10-10T21:09:12.431358+00:00",
+  "calls": [
+    {
+      "tool": "get_status",
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "\"Investigating unmatched bank transactions\" is in progress — 1 of 3 testers finished.\n\nNext steps:\n- get_results already shows what testers have said so far; more may still arrive.\n- Testers are responding. Check get_status again in about 180 seconds.\n\n{\"test_id\":\"d0e0693b-027a-4af5-947b-75f754c9ad48\",\"title\":\"Investigating unmatched bank transactions\",\"type\":\"interview\",\"status\":\"in_progress\",\"stimulus_kind\":null,\"stimulus_url\":null,\"assets\":{\"confirmed\":0,\"pending\":0},\"sends\":{\"total\":2,\"pending\":0,\"sent\":0,\"completed\":1,\"failed\":1,\"held\":0},\"held_sends\":0,\"preview_url\":\"https://check.testwithsenseai.com/preview/47ec306c605b4243be60af2b8bebab12601e0631762e4a84b6306f4bed079d58\",\"checks_remaining\":2,\"retry_after_s\":180}"
+            }
+          ],
+          "structuredContent": {
+            "test_id": "d0e0693b-027a-4af5-947b-75f754c9ad48",
+            "title": "Investigating unmatched bank transactions",
+            "type": "interview",
+            "status": "in_progress",
+            "stimulus_kind": null,
+            "stimulus_url": null,
+            "assets": {
+              "confirmed": 0,
+              "pending": 0
+            },
+            "sends": {
+              "total": 2,
+              "pending": 0,
+              "sent": 0,
+              "completed": 1,
+              "failed": 1,
+              "held": 0
+            },
+            "held_sends": 0,
+            "preview_url": "https://check.testwithsenseai.com/preview/47ec306c605b4243be60af2b8bebab12601e0631762e4a84b6306f4bed079d58",
+            "checks_remaining": 2,
+            "retry_after_s": 180,
+            "next_steps": [
+              "get_results already shows what testers have said so far; more may still arrive.",
+              "Testers are responding. Check get_status again in about 180 seconds."
+            ]
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 2
+      }
+    },
+    {
+      "tool": "get_results",
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "1 of 2 testers have responded.\n\nNext steps:\n- get_results already shows what testers have said so far; more may still arrive.\n- Testers are responding. Check get_status again in about 180 seconds.\n\n{\"test_id\":\"d0e0693b-027a-4af5-947b-75f754c9ad48\",\"type\":\"interview\",\"status\":\"in_progress\",\"sent\":2,\"respondents\":1,\"in_review\":0,\"per_tester\":[{\"tester\":\"Tester 1\",\"summary\":{\"quotes\":[\"So it costs a several hours going back over several months trying to figure out the accuracy of submissions of the books.\",\"Uh, both interns could have been working on some other projects that we are running right now with just, like, building detail.\",\"Really, it it it cost more time than anything else.\"],\"reasons\":[\"A receipt mismatch caused by wrongly calculated gratuity took several hours to trace.\",\"They had to go back over several months of employee receipt submissions.\",\"The team pulled accounting and credit card records, then interviewed the employee to find the cause.\",\"Two interns were pulled off other projects to sort through paperwork.\",\"They now run weekly checks, which makes the monthly check much quicker.\",\"The tester described lost time and pulled staff, but did not mention any delay to the close.\"],\"session\":1,\"assumption_held\":\"supported\"},\"transcript\":\"Tester: Hello?\\nInterviewer: Hi, this is Sense AI calling for your user test. This call is recorded. Your responses are anonymized, so please leave out client names, deal amounts, or other specific client details. This will take about 10 to 15 minutes. Try to speak for a minute or two on each answer. Are you ready for your user test?\\nTester: Anybody yet?\\nInterviewer: I'm here. Are you ready to start the user test?\\nTester: Yes.\\nInterviewer: Great, let's get started. Tell me about the last time a bank transaction didn't match your books. Where did the time go figuring it out?\\nTester: Really, it it it cost more time than anything else. We... it was something silly, but it was... received being uploaded from our team that weren't matching what they input. I'm gonna find out when they were taking pictures of receipt and uploading. It just wasn't calculated to gratuity correctly.\\nTester: So it costs a several hours going back over several months trying to figure out the accuracy of submissions of the books.\\nInterviewer: Thanks, the receipt and gratuity detail helps. Walk me through how you tracked down those mismatches over those months.\\nTester: We had to pull all the QDO, a QuickBooks online details as well as the Chase, which is the company that we use for our credit card. Our team in going over all them and then interviewing the employee to figure out what was happening.\\nInterviewer: Thanks. Who did you end up asking to help sort through those records?\\nTester: Some college interns that we have.\\nInterviewer: Thanks. What did those hours cost you while the interns were digging through the records?\\nTester: Uh, both interns could have been working on some other projects that we are running right now with just, like, building detail. Um, and... but it said they had to sit down and shuffle through paperwork.\\nInterviewer: Thanks. What do you think a tool that checks unmatched transactions would do with one of those receipt mismatches?\\nTester: I think that it would provide us clarity in what, uh, amounts that we're looking for and throw a red flag when we need to.\\nInterviewer: Thanks. Which steps would you still do yourself, and why did you last step in by hand?\\nTester: I think really one thing that we would keep a hold of is having employees to verify that all entries were correct instead of just making on it being correct.\\nInterviewer: Thanks. What time savings would get you to change how you investigate mismatches?\\nTester: Honestly, I'm really up for efficiency, so anything really. I mean, it's insane to me.\\nInterviewer: Thanks. A different question now: how do you feel about AI…\\nTester: two to three hours a\\nInterviewer: Thanks. A different question now: how do you feel about AI being used in finance work?\\nTester: One thing to add, the more AI grows, the more it's gonna be easier financial work, and it's a good thing to process.\\nInterviewer: Thanks. Tell me about a specific time that shaped that feeling.\\nTester: when we found the mismatch in the receipt that... yeah. I clicked on that a lot sooner than what we did manually.\\nInterviewer: Thanks, that was my last question. Do you have any last thoughts on finance and AI? Please respond with a full answer.\\nTester: At this time, I don't have any further, uh, questions or concerns with AI being involved in finance. I think it's a good thing.\\nInterviewer: Thank you! You will receive payment soon. Your next user test is coming shortly.\\nInterviewer: Thanks. You mentioned the interns shuffling through paperwork. What did that process look like day to day?\\nTester: We've already discussed that.\\nInterviewer: Thanks. You said the tool would throw a red flag. What would you do when you saw that flag?\\nTester: That was discussed also.\\nInterviewer: Thanks. You said the mismatch was caught sooner than manual work. How much sooner was that?\\nTester: We've we've already discussed that too.\\nInterviewer: Thanks. What have you seen other finance teams do when they hit a similar receipt mismatch?\\nTester: A lot of finance teams have let it go, or they jump straight to the write up process of disciplinary process without finding the actual issue.\\nInterviewer: Thanks. What happened when a team jumped straight to discipline without finding the issue?\\nInterviewer: Thanks. What happened when a team jumped straight to discipline without finding the issue?\\nTester: You lose trust. You lose trust in the employees?\\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\\nInterviewer: Thanks. Tell me about the last time you lost trust in an employee over a finance mistake.\\nTester: It was over negligence.\\nInterviewer: Thanks. What did that negligence look like?\\nTester: They were rushing through and not actually doing the process of verifying receipts.\\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\\nInterviewer: Thanks. How did you find out they were rushing through the receipts?\\nTester: We've already discussed this. I think this survey is closed in the days of Wuhan.\\nInterviewer: Thanks. How did you find out they were rushing through the receipts?\\nTester: My conversation.\\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\\nInterviewer: Thanks. What did that conversation reveal about how they were handling the receipts?\\nTester: lack of integrity.\\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\\nInterviewer: Thanks. What did you do after that conversation about integrity?\\nTester: We rebuild the... our core behavior values to make sure we all end up being addressed correctly.\\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\\nInterviewer: Thanks. How did rebuilding those core values change how receipts get verified now?\\nTester: And really, it's just an integrity and a trust issue that we have with them. Everything has become recurring.\\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\\nInterviewer: Thanks. What does \\\"recurring\\\" look like in your receipt verification now?\\nTester: we we have monthly checks, but our our weekly checks is total of just monthly.\\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\\nInterviewer: Thanks. How much time do those monthly checks take now?\\nTester: The monthly checks are a lot quicker because we do it weekly.\\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\\nInterviewer: Bye!\"}]}"
+            }
+          ],
+          "structuredContent": {
+            "test_id": "d0e0693b-027a-4af5-947b-75f754c9ad48",
+            "type": "interview",
+            "status": "in_progress",
+            "sent": 2,
+            "respondents": 1,
+            "in_review": 0,
+            "per_tester": [
+              {
+                "tester": "Tester 1",
+                "summary": {
+                  "quotes": [
+                    "So it costs a several hours going back over several months trying to figure out the accuracy of submissions of the books.",
+                    "Uh, both interns could have been working on some other projects that we are running right now with just, like, building detail.",
+                    "Really, it it it cost more time than anything else."
+                  ],
+                  "reasons": [
+                    "A receipt mismatch caused by wrongly calculated gratuity took several hours to trace.",
+                    "They had to go back over several months of employee receipt submissions.",
+                    "The team pulled accounting and credit card records, then interviewed the employee to find the cause.",
+                    "Two interns were pulled off other projects to sort through paperwork.",
+                    "They now run weekly checks, which makes the monthly check much quicker.",
+                    "The tester described lost time and pulled staff, but did not mention any delay to the close."
+                  ],
+                  "session": 1,
+                  "assumption_held": "supported"
+                },
+                "transcript": "Tester: Hello?\nInterviewer: Hi, this is Sense AI calling for your user test. This call is recorded. Your responses are anonymized, so please leave out client names, deal amounts, or other specific client details. This will take about 10 to 15 minutes. Try to speak for a minute or two on each answer. Are you ready for your user test?\nTester: Anybody yet?\nInterviewer: I'm here. Are you ready to start the user test?\nTester: Yes.\nInterviewer: Great, let's get started. Tell me about the last time a bank transaction didn't match your books. Where did the time go figuring it out?\nTester: Really, it it it cost more time than anything else. We... it was something silly, but it was... received being uploaded from our team that weren't matching what they input. I'm gonna find out when they were taking pictures of receipt and uploading. It just wasn't calculated to gratuity correctly.\nTester: So it costs a several hours going back over several months trying to figure out the accuracy of submissions of the books.\nInterviewer: Thanks, the receipt and gratuity detail helps. Walk me through how you tracked down those mismatches over those months.\nTester: We had to pull all the QDO, a QuickBooks online details as well as the Chase, which is the company that we use for our credit card. Our team in going over all them and then interviewing the employee to figure out what was happening.\nInterviewer: Thanks. Who did you end up asking to help sort through those records?\nTester: Some college interns that we have.\nInterviewer: Thanks. What did those hours cost you while the interns were digging through the records?\nTester: Uh, both interns could have been working on some other projects that we are running right now with just, like, building detail. Um, and... but it said they had to sit down and shuffle through paperwork.\nInterviewer: Thanks. What do you think a tool that checks unmatched transactions would do with one of those receipt mismatches?\nTester: I think that it would provide us clarity in what, uh, amounts that we're looking for and throw a red flag when we need to.\nInterviewer: Thanks. Which steps would you still do yourself, and why did you last step in by hand?\nTester: I think really one thing that we would keep a hold of is having employees to verify that all entries were correct instead of just making on it being correct.\nInterviewer: Thanks. What time savings would get you to change how you investigate mismatches?\nTester: Honestly, I'm really up for efficiency, so anything really. I mean, it's insane to me.\nInterviewer: Thanks. A different question now: how do you feel about AI…\nTester: two to three hours a\nInterviewer: Thanks. A different question now: how do you feel about AI being used in finance work?\nTester: One thing to add, the more AI grows, the more it's gonna be easier financial work, and it's a good thing to process.\nInterviewer: Thanks. Tell me about a specific time that shaped that feeling.\nTester: when we found the mismatch in the receipt that... yeah. I clicked on that a lot sooner than what we did manually.\nInterviewer: Thanks, that was my last question. Do you have any last thoughts on finance and AI? Please respond with a full answer.\nTester: At this time, I don't have any further, uh, questions or concerns with AI being involved in finance. I think it's a good thing.\nInterviewer: Thank you! You will receive payment soon. Your next user test is coming shortly.\nInterviewer: Thanks. You mentioned the interns shuffling through paperwork. What did that process look like day to day?\nTester: We've already discussed that.\nInterviewer: Thanks. You said the tool would throw a red flag. What would you do when you saw that flag?\nTester: That was discussed also.\nInterviewer: Thanks. You said the mismatch was caught sooner than manual work. How much sooner was that?\nTester: We've we've already discussed that too.\nInterviewer: Thanks. What have you seen other finance teams do when they hit a similar receipt mismatch?\nTester: A lot of finance teams have let it go, or they jump straight to the write up process of disciplinary process without finding the actual issue.\nInterviewer: Thanks. What happened when a team jumped straight to discipline without finding the issue?\nInterviewer: Thanks. What happened when a team jumped straight to discipline without finding the issue?\nTester: You lose trust. You lose trust in the employees?\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\nInterviewer: Thanks. Tell me about the last time you lost trust in an employee over a finance mistake.\nTester: It was over negligence.\nInterviewer: Thanks. What did that negligence look like?\nTester: They were rushing through and not actually doing the process of verifying receipts.\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\nInterviewer: Thanks. How did you find out they were rushing through the receipts?\nTester: We've already discussed this. I think this survey is closed in the days of Wuhan.\nInterviewer: Thanks. How did you find out they were rushing through the receipts?\nTester: My conversation.\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\nInterviewer: Thanks. What did that conversation reveal about how they were handling the receipts?\nTester: lack of integrity.\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\nInterviewer: Thanks. What did you do after that conversation about integrity?\nTester: We rebuild the... our core behavior values to make sure we all end up being addressed correctly.\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\nInterviewer: Thanks. How did rebuilding those core values change how receipts get verified now?\nTester: And really, it's just an integrity and a trust issue that we have with them. Everything has become recurring.\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\nInterviewer: Thanks. What does \"recurring\" look like in your receipt verification now?\nTester: we we have monthly checks, but our our weekly checks is total of just monthly.\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\nInterviewer: Thanks. How much time do those monthly checks take now?\nTester: The monthly checks are a lot quicker because we do it weekly.\nInterviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.\nInterviewer: Bye!"
+              }
+            ],
+            "next_steps": [
+              "get_results already shows what testers have said so far; more may still arrive.",
+              "Testers are responding. Check get_status again in about 180 seconds."
+            ]
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 3
+      }
+    }
+  ]
+}

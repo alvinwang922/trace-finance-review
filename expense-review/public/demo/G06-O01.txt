@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+PURCHASE ORDER
+Record ID: G06-O01
+Case group: G06
+Reference: NS-SEP-006
+Date: 2026-09-02
+Merchant: Fieldnote Printworks
+Employee: Jordan Ellis
+Amount: USD 450.00
+
+Approved order for 150 presentation booklets at $3.00 each.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

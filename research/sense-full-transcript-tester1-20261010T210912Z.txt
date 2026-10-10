@@ -1,0 +1,80 @@
+Sense AI — full interview transcript
+Study: Investigating unmatched bank transactions
+Test ID: d0e0693b-027a-4af5-947b-75f754c9ad48
+Participant: Tester 1 (role not reported)
+Retrieved: 2026-10-10T21:09:12.431358+00:00
+Source: sense-status-results-20261010T210912Z.json
+
+This is the transcript returned by Sense AI, reproduced verbatim below.
+Repeated questions, repeated closing statements, filler, and unclear wording are part of the original transcript and have been preserved.
+This transcription has not been checked against an audio recording.
+
+--- BEGIN VERBATIM TRANSCRIPT ---
+Tester: Hello?
+Interviewer: Hi, this is Sense AI calling for your user test. This call is recorded. Your responses are anonymized, so please leave out client names, deal amounts, or other specific client details. This will take about 10 to 15 minutes. Try to speak for a minute or two on each answer. Are you ready for your user test?
+Tester: Anybody yet?
+Interviewer: I'm here. Are you ready to start the user test?
+Tester: Yes.
+Interviewer: Great, let's get started. Tell me about the last time a bank transaction didn't match your books. Where did the time go figuring it out?
+Tester: Really, it it it cost more time than anything else. We... it was something silly, but it was... received being uploaded from our team that weren't matching what they input. I'm gonna find out when they were taking pictures of receipt and uploading. It just wasn't calculated to gratuity correctly.
+Tester: So it costs a several hours going back over several months trying to figure out the accuracy of submissions of the books.
+Interviewer: Thanks, the receipt and gratuity detail helps. Walk me through how you tracked down those mismatches over those months.
+Tester: We had to pull all the QDO, a QuickBooks online details as well as the Chase, which is the company that we use for our credit card. Our team in going over all them and then interviewing the employee to figure out what was happening.
+Interviewer: Thanks. Who did you end up asking to help sort through those records?
+Tester: Some college interns that we have.
+Interviewer: Thanks. What did those hours cost you while the interns were digging through the records?
+Tester: Uh, both interns could have been working on some other projects that we are running right now with just, like, building detail. Um, and... but it said they had to sit down and shuffle through paperwork.
+Interviewer: Thanks. What do you think a tool that checks unmatched transactions would do with one of those receipt mismatches?
+Tester: I think that it would provide us clarity in what, uh, amounts that we're looking for and throw a red flag when we need to.
+Interviewer: Thanks. Which steps would you still do yourself, and why did you last step in by hand?
+Tester: I think really one thing that we would keep a hold of is having employees to verify that all entries were correct instead of just making on it being correct.
+Interviewer: Thanks. What time savings would get you to change how you investigate mismatches?
+Tester: Honestly, I'm really up for efficiency, so anything really. I mean, it's insane to me.
+Interviewer: Thanks. A different question now: how do you feel about AI…
+Tester: two to three hours a
+Interviewer: Thanks. A different question now: how do you feel about AI being used in finance work?
+Tester: One thing to add, the more AI grows, the more it's gonna be easier financial work, and it's a good thing to process.
+Interviewer: Thanks. Tell me about a specific time that shaped that feeling.
+Tester: when we found the mismatch in the receipt that... yeah. I clicked on that a lot sooner than what we did manually.
+Interviewer: Thanks, that was my last question. Do you have any last thoughts on finance and AI? Please respond with a full answer.
+Tester: At this time, I don't have any further, uh, questions or concerns with AI being involved in finance. I think it's a good thing.
+Interviewer: Thank you! You will receive payment soon. Your next user test is coming shortly.
+Interviewer: Thanks. You mentioned the interns shuffling through paperwork. What did that process look like day to day?
+Tester: We've already discussed that.
+Interviewer: Thanks. You said the tool would throw a red flag. What would you do when you saw that flag?
+Tester: That was discussed also.
+Interviewer: Thanks. You said the mismatch was caught sooner than manual work. How much sooner was that?
+Tester: We've we've already discussed that too.
+Interviewer: Thanks. What have you seen other finance teams do when they hit a similar receipt mismatch?
+Tester: A lot of finance teams have let it go, or they jump straight to the write up process of disciplinary process without finding the actual issue.
+Interviewer: Thanks. What happened when a team jumped straight to discipline without finding the issue?
+Interviewer: Thanks. What happened when a team jumped straight to discipline without finding the issue?
+Tester: You lose trust. You lose trust in the employees?
+Interviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.
+Interviewer: Thanks. Tell me about the last time you lost trust in an employee over a finance mistake.
+Tester: It was over negligence.
+Interviewer: Thanks. What did that negligence look like?
+Tester: They were rushing through and not actually doing the process of verifying receipts.
+Interviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.
+Interviewer: Thanks. How did you find out they were rushing through the receipts?
+Tester: We've already discussed this. I think this survey is closed in the days of Wuhan.
+Interviewer: Thanks. How did you find out they were rushing through the receipts?
+Tester: My conversation.
+Interviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.
+Interviewer: Thanks. What did that conversation reveal about how they were handling the receipts?
+Tester: lack of integrity.
+Interviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.
+Interviewer: Thanks. What did you do after that conversation about integrity?
+Tester: We rebuild the... our core behavior values to make sure we all end up being addressed correctly.
+Interviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.
+Interviewer: Thanks. How did rebuilding those core values change how receipts get verified now?
+Tester: And really, it's just an integrity and a trust issue that we have with them. Everything has become recurring.
+Interviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.
+Interviewer: Thanks. What does "recurring" look like in your receipt verification now?
+Tester: we we have monthly checks, but our our weekly checks is total of just monthly.
+Interviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.
+Interviewer: Thanks. How much time do those monthly checks take now?
+Tester: The monthly checks are a lot quicker because we do it weekly.
+Interviewer: Thanks. Thank you! You will receive payment soon. Your next user test is coming shortly.
+Interviewer: Bye!
+--- END VERBATIM TRANSCRIPT ---

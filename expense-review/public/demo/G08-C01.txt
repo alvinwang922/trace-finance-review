@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+POSTED CARD RECORD
+Record ID: G08-C01
+Case group: G08
+Reference: NS-SEP-008
+Date: 2026-09-13
+Merchant: Ember Catering
+Employee: Maya Chen
+Amount: USD 184.00
+
+Posted catered-lunch charge.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

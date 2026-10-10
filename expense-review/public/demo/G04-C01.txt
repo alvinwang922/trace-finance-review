@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+POSTED CARD RECORD
+Record ID: G04-C01
+Case group: G04
+Reference: NS-SEP-004
+Date: 2026-09-19
+Merchant: Harbor Car Service
+Employee: Sam Rivera
+Amount: USD 78.50
+
+Posted transport charge for client visit.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

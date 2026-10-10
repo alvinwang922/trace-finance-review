@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+POSTED CARD RECORD
+Record ID: G10-C01
+Case group: G10
+Reference: NS-SEP-010
+Date: 2026-09-26
+Merchant: Kite Studio Rentals
+Employee: Sam Rivera
+Amount: USD 325.00
+
+Posted studio-rental charge.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

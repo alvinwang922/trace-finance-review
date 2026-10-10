@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+POSTED CARD RECORD
+Record ID: G02-C01
+Case group: G02
+Reference: NS-SEP-002 / SHIP-A
+Date: 2026-09-10
+Merchant: Pine & Paper Supply
+Employee: Jordan Ellis
+Amount: USD 120.00
+
+Posted debit for shipment 1.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

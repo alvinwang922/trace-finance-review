@@ -1,0 +1,66 @@
+{
+  "retrieved_at_utc": "2026-10-10T20:42:30.579732+00:00",
+  "test_id": "d0e0693b-027a-4af5-947b-75f754c9ad48",
+  "get_status": {
+    "test_id": "d0e0693b-027a-4af5-947b-75f754c9ad48",
+    "title": "Investigating unmatched bank transactions",
+    "type": "interview",
+    "status": "in_progress",
+    "stimulus_kind": null,
+    "stimulus_url": null,
+    "assets": {
+      "confirmed": 0,
+      "pending": 0
+    },
+    "sends": {
+      "total": 2,
+      "pending": 0,
+      "sent": 0,
+      "completed": 1,
+      "failed": 1,
+      "held": 0
+    },
+    "held_sends": 0,
+    "preview_url": "https://check.testwithsenseai.com/preview/47ec306c605b4243be60af2b8bebab12601e0631762e4a84b6306f4bed079d58",
+    "checks_remaining": 2,
+    "retry_after_s": 180,
+    "next_steps": [
+      "get_results already shows what testers have said so far; more may still arrive.",
+      "Testers are responding. Check get_status again in about 180 seconds."
+    ]
+  },
+  "get_results": {
+    "test_id": "d0e0693b-027a-4af5-947b-75f754c9ad48",
+    "type": "interview",
+    "status": "in_progress",
+    "sent": 2,
+    "respondents": 1,
+    "in_review": 0,
+    "per_tester": [
+      {
+        "tester": "Tester 1",
+        "summary": {
+          "quotes": [
+            "So it costs a several hours going back over several months trying to figure out the accuracy of submissions of the books.",
+            "Uh, both interns could have been working on some other projects that we are running right now with just, like, building detail.",
+            "Really, it it it cost more time than anything else."
+          ],
+          "reasons": [
+            "A receipt mismatch caused by wrongly calculated gratuity took several hours to trace.",
+            "They had to go back over several months of employee receipt submissions.",
+            "The team pulled accounting and credit card records, then interviewed the employee to find the cause.",
+            "Two interns were pulled off other projects to sort through paperwork.",
+            "They now run weekly checks, which makes the monthly check much quicker.",
+            "The tester described lost time and pulled staff, but did not mention any delay to the close."
+          ],
+          "session": 1,
+          "assumption_held": "supported"
+        }
+      }
+    ],
+    "next_steps": [
+      "get_results already shows what testers have said so far; more may still arrive.",
+      "Testers are responding. Check get_status again in about 180 seconds."
+    ]
+  }
+}

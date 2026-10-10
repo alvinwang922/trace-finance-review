@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+POSTED CARD RECORD
+Record ID: G05-C01
+Case group: G05
+Reference: NS-SEP-005 / BANK-A
+Date: 2026-09-22
+Merchant: Common Ground Coffee
+Employee: Alex Morgan
+Amount: USD 16.00
+
+Posted card charge A; no purchase-specific reference supplied.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

@@ -1,0 +1,44 @@
+{
+  "retrieved_at_utc": "2026-10-10T20:17:51Z",
+  "test_id": "d0e0693b-027a-4af5-947b-75f754c9ad48",
+  "title": "Investigating unmatched bank transactions",
+  "theme": "save_time",
+  "status": "in_progress",
+  "checks_remaining": 2,
+  "sends": {
+    "total": 2,
+    "pending": 0,
+    "sent": 0,
+    "completed": 1,
+    "failed": 1,
+    "held": 0
+  },
+  "results": {
+    "sent": 2,
+    "respondents": 1,
+    "in_review": 0,
+    "per_tester": [
+      {
+        "tester": "Tester 1",
+        "summary": {
+          "quotes": [
+            "So it costs a several hours going back over several months trying to figure out the accuracy of submissions of the books.",
+            "Uh, both interns could have been working on some other projects that we are running right now with just, like, building detail.",
+            "Really, it it it cost more time than anything else."
+          ],
+          "reasons": [
+            "A receipt mismatch caused by wrongly calculated gratuity took several hours to trace.",
+            "They had to go back over several months of employee receipt submissions.",
+            "The team pulled accounting and credit card records, then interviewed the employee to find the cause.",
+            "Two interns were pulled off other projects to sort through paperwork.",
+            "They now run weekly checks, which makes the monthly check much quicker.",
+            "The tester described lost time and pulled staff, but did not mention any delay to the close."
+          ],
+          "session": 1,
+          "assumption_held": "supported"
+        }
+      }
+    ]
+  },
+  "provenance": "Sense AI get_status and get_results. Summary and quotes reproduced as returned; not a full transcript. Retrieved timestamp records the start of this status check."
+}

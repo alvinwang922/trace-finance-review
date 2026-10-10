@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+.env.local
+.base44/
+base44/.app.jsonc
+*.tsbuildinfo

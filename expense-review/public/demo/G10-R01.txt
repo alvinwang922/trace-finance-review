@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+RECEIPT EXCERPT
+Record ID: G10-R01
+Case group: G10
+Reference: NS-SEP-010
+Date: 2026-09-25
+Merchant: Kite Studio Rentals
+Employee: Sam Rivera
+Amount: USD 325.00
+
+One-day photography studio rental; total $325.00.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+PURCHASE ORDER
+Record ID: G02-O01
+Case group: G02
+Reference: NS-SEP-002
+Date: 2026-09-07
+Merchant: Pine & Paper Supply
+Employee: Jordan Ellis
+Amount: USD 300.00
+
+Original supply order: two shipments totaling $300.00 before a later return.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

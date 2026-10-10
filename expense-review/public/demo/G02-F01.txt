@@ -1,0 +1,17 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+POSTED CARD CREDIT
+Record ID: G02-F01
+Case group: G02
+Reference: NS-SEP-002 / RETURN-01
+Date: 2026-09-16
+Merchant: Pine & Paper Supply
+Employee: Jordan Ellis
+Amount: USD 40.00
+
+Posted card credit for returned presentation materials from shipment 2.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.
+Refunds are represented as positive amounts with source=refund; apply the credit once when calculating net spend.

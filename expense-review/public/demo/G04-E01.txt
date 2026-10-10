@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+EXPENSE SUBMISSION
+Record ID: G04-E01
+Case group: G04
+Reference: NS-SEP-004
+Date: 2026-09-18
+Merchant: Harbor Car Service
+Employee: Sam Rivera
+Amount: USD 78.50
+
+Client-visit transport; receipt has not been supplied.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.

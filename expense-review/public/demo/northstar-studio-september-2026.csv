@@ -1,0 +1,36 @@
+id,groupId,date,merchant,employee,source,amount,currency,description,reference
+G01-E01,G01,2026-09-04,Juniper Table,Maya Chen,expense,114.00,USD,Team dinner submitted as $100.00 meal plus $14.00 tip.,NS-SEP-001
+G01-R01,G01,2026-09-04,Juniper Table,Maya Chen,receipt,112.00,USD,Meal $100.00; gratuity $12.00; total $112.00.,NS-SEP-001
+G01-C01,G01,2026-09-05,Juniper Table,Maya Chen,card,112.00,USD,Posted card charge for team dinner.,NS-SEP-001
+G02-O01,G02,2026-09-07,Pine & Paper Supply,Jordan Ellis,order,300.00,USD,Original supply order: two shipments totaling $300.00 before a later return.,NS-SEP-002
+G02-R01,G02,2026-09-09,Pine & Paper Supply,Jordan Ellis,receipt,120.00,USD,Shipment 1: notebooks and pens; gross total $120.00.,NS-SEP-002 / SHIP-A
+G02-R02,G02,2026-09-11,Pine & Paper Supply,Jordan Ellis,receipt,180.00,USD,Shipment 2: presentation materials; gross total $180.00.,NS-SEP-002 / SHIP-B
+G02-C01,G02,2026-09-10,Pine & Paper Supply,Jordan Ellis,card,120.00,USD,Posted debit for shipment 1.,NS-SEP-002 / SHIP-A
+G02-C02,G02,2026-09-12,Pine & Paper Supply,Jordan Ellis,card,180.00,USD,Posted debit for shipment 2.,NS-SEP-002 / SHIP-B
+G02-F01,G02,2026-09-16,Pine & Paper Supply,Jordan Ellis,refund,40.00,USD,Posted card credit for returned presentation materials from shipment 2.,NS-SEP-002 / RETURN-01
+G02-E01,G02,2026-09-17,Pine & Paper Supply,Jordan Ellis,expense,260.00,USD,Net expense after $300.00 in shipments less a $40.00 posted refund.,NS-SEP-002
+G03-E01,G03,2026-09-14,Lumen Workshop,Maya Chen,expense,286.50,USD,Workshop materials submitted at $286.50.,NS-SEP-003
+G03-R01,G03,2026-09-14,Lumen Workshop,Maya Chen,receipt,268.50,USD,Workshop materials $250.00; tax $18.50; total $268.50.,NS-SEP-003
+G03-C01,G03,2026-09-15,Lumen Workshop,Maya Chen,card,268.50,USD,Posted card charge for workshop materials.,NS-SEP-003
+G04-E01,G04,2026-09-18,Harbor Car Service,Sam Rivera,expense,78.50,USD,Client-visit transport; receipt has not been supplied.,NS-SEP-004
+G04-C01,G04,2026-09-19,Harbor Car Service,Sam Rivera,card,78.50,USD,Posted transport charge for client visit.,NS-SEP-004
+G05-E01,G05,2026-09-21,Common Ground Coffee,Alex Morgan,expense,16.00,USD,Coffee meeting submission A; no receipt or itemized detail supplied.,NS-SEP-005 / SUB-A
+G05-E02,G05,2026-09-21,Common Ground Coffee,Alex Morgan,expense,16.00,USD,Coffee meeting submission B; no receipt or itemized detail supplied.,NS-SEP-005 / SUB-B
+G05-C01,G05,2026-09-22,Common Ground Coffee,Alex Morgan,card,16.00,USD,Posted card charge A; no purchase-specific reference supplied.,NS-SEP-005 / BANK-A
+G05-C02,G05,2026-09-22,Common Ground Coffee,Alex Morgan,card,16.00,USD,Posted card charge B; no purchase-specific reference supplied.,NS-SEP-005 / BANK-B
+G06-O01,G06,2026-09-02,Fieldnote Printworks,Jordan Ellis,order,450.00,USD,Approved order for 150 presentation booklets at $3.00 each.,NS-SEP-006
+G06-R01,G06,2026-09-03,Fieldnote Printworks,Jordan Ellis,receipt,450.00,USD,150 presentation booklets at $3.00 each; final total $450.00.,NS-SEP-006
+G06-C01,G06,2026-09-04,Fieldnote Printworks,Jordan Ellis,card,450.00,USD,Posted printing charge.,NS-SEP-006
+G06-E01,G06,2026-09-04,Fieldnote Printworks,Jordan Ellis,expense,450.00,USD,Presentation booklets for client workshop.,NS-SEP-006
+G07-R01,G07,2026-09-08,Moss Digital Tools,Sam Rivera,receipt,49.00,USD,September design-tool subscription; total $49.00.,NS-SEP-007
+G07-C01,G07,2026-09-09,Moss Digital Tools,Sam Rivera,card,49.00,USD,Posted monthly subscription charge.,NS-SEP-007
+G07-E01,G07,2026-09-09,Moss Digital Tools,Sam Rivera,expense,49.00,USD,September design-tool subscription.,NS-SEP-007
+G08-R01,G08,2026-09-12,Ember Catering,Maya Chen,receipt,184.00,USD,Team lunch $160.00; gratuity $24.00; total $184.00.,NS-SEP-008
+G08-C01,G08,2026-09-13,Ember Catering,Maya Chen,card,184.00,USD,Posted catered-lunch charge.,NS-SEP-008
+G08-E01,G08,2026-09-13,Ember Catering,Maya Chen,expense,184.00,USD,Team lunch including $24.00 gratuity.,NS-SEP-008
+G09-R01,G09,2026-09-23,Willow Rail,Alex Morgan,receipt,62.00,USD,Return rail ticket for client visit; total $62.00.,NS-SEP-009
+G09-C01,G09,2026-09-24,Willow Rail,Alex Morgan,card,62.00,USD,Posted return-ticket charge.,NS-SEP-009
+G09-E01,G09,2026-09-24,Willow Rail,Alex Morgan,expense,62.00,USD,Return rail travel to client office.,NS-SEP-009
+G10-R01,G10,2026-09-25,Kite Studio Rentals,Sam Rivera,receipt,325.00,USD,One-day photography studio rental; total $325.00.,NS-SEP-010
+G10-C01,G10,2026-09-26,Kite Studio Rentals,Sam Rivera,card,325.00,USD,Posted studio-rental charge.,NS-SEP-010
+G10-E01,G10,2026-09-26,Kite Studio Rentals,Sam Rivera,expense,325.00,USD,Photography studio for autumn client campaign.,NS-SEP-010

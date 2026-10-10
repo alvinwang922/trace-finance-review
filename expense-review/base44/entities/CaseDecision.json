@@ -1,0 +1,24 @@
+{
+  "name": "CaseDecision",
+  "type": "object",
+  "title": "Case decision",
+  "description": "Append-only reviewer decisions. Source documents remain local unless explicitly sent for an AI draft.",
+  "properties": {
+    "dataset_id": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "case_id": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "status": { "type": "string", "enum": ["confirmed", "explained", "needs_information"] },
+    "note": { "type": "string", "maxLength": 4000 }
+  },
+  "required": ["dataset_id", "case_id", "status", "note"],
+  "rls": {
+    "create": {
+      "$or": [
+        { "user_condition": { "role": "admin" } },
+        { "user_condition": { "role": "user" } }
+      ]
+    },
+    "read": { "created_by_id": "{{user.id}}" },
+    "update": false,
+    "delete": false
+  }
+}

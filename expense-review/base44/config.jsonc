@@ -1,0 +1,9 @@
+{
+  "name": "Trace Expense Review",
+  "description": "Review expense discrepancies against linked source records and record a human decision.",
+  "entitiesDir": "./entities",
+  "site": {
+    "outputDirectory": "./dist",
+    "buildCommand": "npm run build"
+  }
+}

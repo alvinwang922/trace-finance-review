@@ -1,0 +1,482 @@
+/** Fictional, explicitly grouped demo records. No client or bank data. */
+export interface DemoRecord {
+  id: string;
+  groupId: string;
+  date: string;
+  merchant: string;
+  employee: string;
+  source: 'expense' | 'card' | 'receipt' | 'order' | 'refund';
+  amountCents: number;
+  currency: 'USD';
+  description: string;
+  fileName: string;
+  reference?: string;
+}
+
+export const demoDataset: {
+  id: string;
+  name: string;
+  isDemo: true;
+  records: DemoRecord[];
+} = {
+  "id": "northstar-studio-september-2026",
+  "name": "Northstar Studio · September 2026",
+  "isDemo": true,
+  "records": [
+    {
+      "id": "G01-E01",
+      "groupId": "G01",
+      "date": "2026-09-04",
+      "merchant": "Juniper Table",
+      "employee": "Maya Chen",
+      "source": "expense",
+      "amountCents": 11400,
+      "currency": "USD",
+      "description": "Team dinner submitted as $100.00 meal plus $14.00 tip.",
+      "fileName": "G01-E01.txt",
+      "reference": "NS-SEP-001"
+    },
+    {
+      "id": "G01-R01",
+      "groupId": "G01",
+      "date": "2026-09-04",
+      "merchant": "Juniper Table",
+      "employee": "Maya Chen",
+      "source": "receipt",
+      "amountCents": 11200,
+      "currency": "USD",
+      "description": "Meal $100.00; gratuity $12.00; total $112.00.",
+      "fileName": "G01-R01.txt",
+      "reference": "NS-SEP-001"
+    },
+    {
+      "id": "G01-C01",
+      "groupId": "G01",
+      "date": "2026-09-05",
+      "merchant": "Juniper Table",
+      "employee": "Maya Chen",
+      "source": "card",
+      "amountCents": 11200,
+      "currency": "USD",
+      "description": "Posted card charge for team dinner.",
+      "fileName": "G01-C01.txt",
+      "reference": "NS-SEP-001"
+    },
+    {
+      "id": "G02-O01",
+      "groupId": "G02",
+      "date": "2026-09-07",
+      "merchant": "Pine & Paper Supply",
+      "employee": "Jordan Ellis",
+      "source": "order",
+      "amountCents": 30000,
+      "currency": "USD",
+      "description": "Original supply order: two shipments totaling $300.00 before a later return.",
+      "fileName": "G02-O01.txt",
+      "reference": "NS-SEP-002"
+    },
+    {
+      "id": "G02-R01",
+      "groupId": "G02",
+      "date": "2026-09-09",
+      "merchant": "Pine & Paper Supply",
+      "employee": "Jordan Ellis",
+      "source": "receipt",
+      "amountCents": 12000,
+      "currency": "USD",
+      "description": "Shipment 1: notebooks and pens; gross total $120.00.",
+      "fileName": "G02-R01.txt",
+      "reference": "NS-SEP-002 / SHIP-A"
+    },
+    {
+      "id": "G02-R02",
+      "groupId": "G02",
+      "date": "2026-09-11",
+      "merchant": "Pine & Paper Supply",
+      "employee": "Jordan Ellis",
+      "source": "receipt",
+      "amountCents": 18000,
+      "currency": "USD",
+      "description": "Shipment 2: presentation materials; gross total $180.00.",
+      "fileName": "G02-R02.txt",
+      "reference": "NS-SEP-002 / SHIP-B"
+    },
+    {
+      "id": "G02-C01",
+      "groupId": "G02",
+      "date": "2026-09-10",
+      "merchant": "Pine & Paper Supply",
+      "employee": "Jordan Ellis",
+      "source": "card",
+      "amountCents": 12000,
+      "currency": "USD",
+      "description": "Posted debit for shipment 1.",
+      "fileName": "G02-C01.txt",
+      "reference": "NS-SEP-002 / SHIP-A"
+    },
+    {
+      "id": "G02-C02",
+      "groupId": "G02",
+      "date": "2026-09-12",
+      "merchant": "Pine & Paper Supply",
+      "employee": "Jordan Ellis",
+      "source": "card",
+      "amountCents": 18000,
+      "currency": "USD",
+      "description": "Posted debit for shipment 2.",
+      "fileName": "G02-C02.txt",
+      "reference": "NS-SEP-002 / SHIP-B"
+    },
+    {
+      "id": "G02-F01",
+      "groupId": "G02",
+      "date": "2026-09-16",
+      "merchant": "Pine & Paper Supply",
+      "employee": "Jordan Ellis",
+      "source": "refund",
+      "amountCents": 4000,
+      "currency": "USD",
+      "description": "Posted card credit for returned presentation materials from shipment 2.",
+      "fileName": "G02-F01.txt",
+      "reference": "NS-SEP-002 / RETURN-01"
+    },
+    {
+      "id": "G02-E01",
+      "groupId": "G02",
+      "date": "2026-09-17",
+      "merchant": "Pine & Paper Supply",
+      "employee": "Jordan Ellis",
+      "source": "expense",
+      "amountCents": 26000,
+      "currency": "USD",
+      "description": "Net expense after $300.00 in shipments less a $40.00 posted refund.",
+      "fileName": "G02-E01.txt",
+      "reference": "NS-SEP-002"
+    },
+    {
+      "id": "G03-E01",
+      "groupId": "G03",
+      "date": "2026-09-14",
+      "merchant": "Lumen Workshop",
+      "employee": "Maya Chen",
+      "source": "expense",
+      "amountCents": 28650,
+      "currency": "USD",
+      "description": "Workshop materials submitted at $286.50.",
+      "fileName": "G03-E01.txt",
+      "reference": "NS-SEP-003"
+    },
+    {
+      "id": "G03-R01",
+      "groupId": "G03",
+      "date": "2026-09-14",
+      "merchant": "Lumen Workshop",
+      "employee": "Maya Chen",
+      "source": "receipt",
+      "amountCents": 26850,
+      "currency": "USD",
+      "description": "Workshop materials $250.00; tax $18.50; total $268.50.",
+      "fileName": "G03-R01.txt",
+      "reference": "NS-SEP-003"
+    },
+    {
+      "id": "G03-C01",
+      "groupId": "G03",
+      "date": "2026-09-15",
+      "merchant": "Lumen Workshop",
+      "employee": "Maya Chen",
+      "source": "card",
+      "amountCents": 26850,
+      "currency": "USD",
+      "description": "Posted card charge for workshop materials.",
+      "fileName": "G03-C01.txt",
+      "reference": "NS-SEP-003"
+    },
+    {
+      "id": "G04-E01",
+      "groupId": "G04",
+      "date": "2026-09-18",
+      "merchant": "Harbor Car Service",
+      "employee": "Sam Rivera",
+      "source": "expense",
+      "amountCents": 7850,
+      "currency": "USD",
+      "description": "Client-visit transport; receipt has not been supplied.",
+      "fileName": "G04-E01.txt",
+      "reference": "NS-SEP-004"
+    },
+    {
+      "id": "G04-C01",
+      "groupId": "G04",
+      "date": "2026-09-19",
+      "merchant": "Harbor Car Service",
+      "employee": "Sam Rivera",
+      "source": "card",
+      "amountCents": 7850,
+      "currency": "USD",
+      "description": "Posted transport charge for client visit.",
+      "fileName": "G04-C01.txt",
+      "reference": "NS-SEP-004"
+    },
+    {
+      "id": "G05-E01",
+      "groupId": "G05",
+      "date": "2026-09-21",
+      "merchant": "Common Ground Coffee",
+      "employee": "Alex Morgan",
+      "source": "expense",
+      "amountCents": 1600,
+      "currency": "USD",
+      "description": "Coffee meeting submission A; no receipt or itemized detail supplied.",
+      "fileName": "G05-E01.txt",
+      "reference": "NS-SEP-005 / SUB-A"
+    },
+    {
+      "id": "G05-E02",
+      "groupId": "G05",
+      "date": "2026-09-21",
+      "merchant": "Common Ground Coffee",
+      "employee": "Alex Morgan",
+      "source": "expense",
+      "amountCents": 1600,
+      "currency": "USD",
+      "description": "Coffee meeting submission B; no receipt or itemized detail supplied.",
+      "fileName": "G05-E02.txt",
+      "reference": "NS-SEP-005 / SUB-B"
+    },
+    {
+      "id": "G05-C01",
+      "groupId": "G05",
+      "date": "2026-09-22",
+      "merchant": "Common Ground Coffee",
+      "employee": "Alex Morgan",
+      "source": "card",
+      "amountCents": 1600,
+      "currency": "USD",
+      "description": "Posted card charge A; no purchase-specific reference supplied.",
+      "fileName": "G05-C01.txt",
+      "reference": "NS-SEP-005 / BANK-A"
+    },
+    {
+      "id": "G05-C02",
+      "groupId": "G05",
+      "date": "2026-09-22",
+      "merchant": "Common Ground Coffee",
+      "employee": "Alex Morgan",
+      "source": "card",
+      "amountCents": 1600,
+      "currency": "USD",
+      "description": "Posted card charge B; no purchase-specific reference supplied.",
+      "fileName": "G05-C02.txt",
+      "reference": "NS-SEP-005 / BANK-B"
+    },
+    {
+      "id": "G06-O01",
+      "groupId": "G06",
+      "date": "2026-09-02",
+      "merchant": "Fieldnote Printworks",
+      "employee": "Jordan Ellis",
+      "source": "order",
+      "amountCents": 45000,
+      "currency": "USD",
+      "description": "Approved order for 150 presentation booklets at $3.00 each.",
+      "fileName": "G06-O01.txt",
+      "reference": "NS-SEP-006"
+    },
+    {
+      "id": "G06-R01",
+      "groupId": "G06",
+      "date": "2026-09-03",
+      "merchant": "Fieldnote Printworks",
+      "employee": "Jordan Ellis",
+      "source": "receipt",
+      "amountCents": 45000,
+      "currency": "USD",
+      "description": "150 presentation booklets at $3.00 each; final total $450.00.",
+      "fileName": "G06-R01.txt",
+      "reference": "NS-SEP-006"
+    },
+    {
+      "id": "G06-C01",
+      "groupId": "G06",
+      "date": "2026-09-04",
+      "merchant": "Fieldnote Printworks",
+      "employee": "Jordan Ellis",
+      "source": "card",
+      "amountCents": 45000,
+      "currency": "USD",
+      "description": "Posted printing charge.",
+      "fileName": "G06-C01.txt",
+      "reference": "NS-SEP-006"
+    },
+    {
+      "id": "G06-E01",
+      "groupId": "G06",
+      "date": "2026-09-04",
+      "merchant": "Fieldnote Printworks",
+      "employee": "Jordan Ellis",
+      "source": "expense",
+      "amountCents": 45000,
+      "currency": "USD",
+      "description": "Presentation booklets for client workshop.",
+      "fileName": "G06-E01.txt",
+      "reference": "NS-SEP-006"
+    },
+    {
+      "id": "G07-R01",
+      "groupId": "G07",
+      "date": "2026-09-08",
+      "merchant": "Moss Digital Tools",
+      "employee": "Sam Rivera",
+      "source": "receipt",
+      "amountCents": 4900,
+      "currency": "USD",
+      "description": "September design-tool subscription; total $49.00.",
+      "fileName": "G07-R01.txt",
+      "reference": "NS-SEP-007"
+    },
+    {
+      "id": "G07-C01",
+      "groupId": "G07",
+      "date": "2026-09-09",
+      "merchant": "Moss Digital Tools",
+      "employee": "Sam Rivera",
+      "source": "card",
+      "amountCents": 4900,
+      "currency": "USD",
+      "description": "Posted monthly subscription charge.",
+      "fileName": "G07-C01.txt",
+      "reference": "NS-SEP-007"
+    },
+    {
+      "id": "G07-E01",
+      "groupId": "G07",
+      "date": "2026-09-09",
+      "merchant": "Moss Digital Tools",
+      "employee": "Sam Rivera",
+      "source": "expense",
+      "amountCents": 4900,
+      "currency": "USD",
+      "description": "September design-tool subscription.",
+      "fileName": "G07-E01.txt",
+      "reference": "NS-SEP-007"
+    },
+    {
+      "id": "G08-R01",
+      "groupId": "G08",
+      "date": "2026-09-12",
+      "merchant": "Ember Catering",
+      "employee": "Maya Chen",
+      "source": "receipt",
+      "amountCents": 18400,
+      "currency": "USD",
+      "description": "Team lunch $160.00; gratuity $24.00; total $184.00.",
+      "fileName": "G08-R01.txt",
+      "reference": "NS-SEP-008"
+    },
+    {
+      "id": "G08-C01",
+      "groupId": "G08",
+      "date": "2026-09-13",
+      "merchant": "Ember Catering",
+      "employee": "Maya Chen",
+      "source": "card",
+      "amountCents": 18400,
+      "currency": "USD",
+      "description": "Posted catered-lunch charge.",
+      "fileName": "G08-C01.txt",
+      "reference": "NS-SEP-008"
+    },
+    {
+      "id": "G08-E01",
+      "groupId": "G08",
+      "date": "2026-09-13",
+      "merchant": "Ember Catering",
+      "employee": "Maya Chen",
+      "source": "expense",
+      "amountCents": 18400,
+      "currency": "USD",
+      "description": "Team lunch including $24.00 gratuity.",
+      "fileName": "G08-E01.txt",
+      "reference": "NS-SEP-008"
+    },
+    {
+      "id": "G09-R01",
+      "groupId": "G09",
+      "date": "2026-09-23",
+      "merchant": "Willow Rail",
+      "employee": "Alex Morgan",
+      "source": "receipt",
+      "amountCents": 6200,
+      "currency": "USD",
+      "description": "Return rail ticket for client visit; total $62.00.",
+      "fileName": "G09-R01.txt",
+      "reference": "NS-SEP-009"
+    },
+    {
+      "id": "G09-C01",
+      "groupId": "G09",
+      "date": "2026-09-24",
+      "merchant": "Willow Rail",
+      "employee": "Alex Morgan",
+      "source": "card",
+      "amountCents": 6200,
+      "currency": "USD",
+      "description": "Posted return-ticket charge.",
+      "fileName": "G09-C01.txt",
+      "reference": "NS-SEP-009"
+    },
+    {
+      "id": "G09-E01",
+      "groupId": "G09",
+      "date": "2026-09-24",
+      "merchant": "Willow Rail",
+      "employee": "Alex Morgan",
+      "source": "expense",
+      "amountCents": 6200,
+      "currency": "USD",
+      "description": "Return rail travel to client office.",
+      "fileName": "G09-E01.txt",
+      "reference": "NS-SEP-009"
+    },
+    {
+      "id": "G10-R01",
+      "groupId": "G10",
+      "date": "2026-09-25",
+      "merchant": "Kite Studio Rentals",
+      "employee": "Sam Rivera",
+      "source": "receipt",
+      "amountCents": 32500,
+      "currency": "USD",
+      "description": "One-day photography studio rental; total $325.00.",
+      "fileName": "G10-R01.txt",
+      "reference": "NS-SEP-010"
+    },
+    {
+      "id": "G10-C01",
+      "groupId": "G10",
+      "date": "2026-09-26",
+      "merchant": "Kite Studio Rentals",
+      "employee": "Sam Rivera",
+      "source": "card",
+      "amountCents": 32500,
+      "currency": "USD",
+      "description": "Posted studio-rental charge.",
+      "fileName": "G10-C01.txt",
+      "reference": "NS-SEP-010"
+    },
+    {
+      "id": "G10-E01",
+      "groupId": "G10",
+      "date": "2026-09-26",
+      "merchant": "Kite Studio Rentals",
+      "employee": "Sam Rivera",
+      "source": "expense",
+      "amountCents": 32500,
+      "currency": "USD",
+      "description": "Photography studio for autumn client campaign.",
+      "fileName": "G10-E01.txt",
+      "reference": "NS-SEP-010"
+    }
+  ]
+};

@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | September 2026
+
+EXPENSE SUBMISSION
+Record ID: G06-E01
+Case group: G06
+Reference: NS-SEP-006
+Date: 2026-09-04
+Merchant: Fieldnote Printworks
+Employee: Jordan Ellis
+Amount: USD 450.00
+
+Presentation booklets for client workshop.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.
