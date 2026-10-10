@@ -117,6 +117,13 @@ function analyzeGroup(
       'Can you confirm whether these are separate transactions and provide distinct source references?');
   }
   if (bySource.expense.length > 1 || bySource.order.length > 1) {
+    if (bySource.expense.length > 1 && bySource.card.length > 1 && !bySource.receipt.length) {
+      const firstCard = bySource.card[0];
+      const cardAmount = formatAmount(firstCard.amountCents, currency);
+      return unresolved('ambiguous', 'Possible duplicate card charge',
+        `There are ${bySource.expense.length} expense submissions and ${bySource.card.length} card charges, but no receipt evidence. The card charges share the same merchant, date, and amount pattern, so Trace cannot tell whether this is a duplicate, a separate purchase, or a pre-authorization hold.`,
+        `Your card was charged ${cardAmount} twice at ${firstCard.merchant} on ${firstCard.date}. Were these two separate purchases?`);
+    }
     return unresolved('ambiguous', 'More than one claimed total',
       'This group contains multiple expense or order totals. The app cannot tell whether they are separate purchases, line items, or revisions.',
       'Which expense and order total should apply to this purchase?');
@@ -167,11 +174,19 @@ function analyzeGroup(
       differenceCents: netCard - netReceipts,
       expectedCents: netReceipts,
       actualCents: netCard,
-      nextQuestion: 'Is there an updated receipt, adjustment, or additional charge explaining this difference?',
+      nextQuestion: `The card and receipt totals differ by ${formatAmount(Math.abs(netCard - netReceipts), currency)}. Is there an updated receipt, adjustment, or additional charge explaining that difference?`,
     };
   }
 
   if (amount.expense !== netCard) {
+    const difference = Math.abs(amount.expense - netCard);
+    const descriptions = records.map((record) => record.description.toLowerCase()).join(' ');
+    const hasTipOrFeeSignal = /tip|gratuity|service fee|surcharge/.test(descriptions);
+    const nextQuestion = hasTipOrFeeSignal
+      ? `The submitted amount is ${formatAmount(amount.expense, currency)} while the card and receipt support ${formatAmount(netCard, currency)}. Was the ${formatAmount(difference, currency)} difference a tip, service fee, or surcharge entered differently?`
+      : difference % 900 === 0
+        ? `The records support ${formatAmount(netCard, currency)}, but ${formatAmount(amount.expense, currency)} was submitted. Could ${formatAmount(netCard, currency)} have been entered as ${formatAmount(amount.expense, currency)}?`
+        : `The submitted amount is ${formatAmount(amount.expense, currency)} while the card and receipt support ${formatAmount(netCard, currency)}. What explains the ${formatAmount(difference, currency)} difference?`;
     return {
       ...base,
       kind: 'amount_difference',
@@ -181,7 +196,7 @@ function analyzeGroup(
       differenceCents: amount.expense - netCard,
       expectedCents: netCard,
       actualCents: amount.expense,
-      nextQuestion: 'What explains the submitted amount? Confirm the receipt details and any adjustment with the employee.',
+      nextQuestion,
     };
   }
 
