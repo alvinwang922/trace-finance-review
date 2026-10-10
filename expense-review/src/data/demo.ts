@@ -30,9 +30,9 @@ export const demoDataset: {
       "merchant": "Juniper Table",
       "employee": "Maya Chen",
       "source": "expense",
-      "amountCents": 11400,
+      "amountCents": 12140,
       "currency": "USD",
-      "description": "Team dinner submitted as $100.00 meal plus $14.00 tip.",
+      "description": "Team dinner submitted as $100.00 meal plus $21.40 tip.",
       "fileName": "G01-E01.txt",
       "reference": "NS-SEP-001"
     },

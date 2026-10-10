@@ -10,7 +10,7 @@ Merchant: Juniper Table
 Employee: Maya Chen
 Amount: USD 114.00
 
-Team dinner submitted as $100.00 meal plus $14.00 tip.
+Team dinner submitted as $100.00 meal plus $21.40 tip.
 
 This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
 Case groups are supplied explicitly for this fixture; they are not inferred from unstructured files.
