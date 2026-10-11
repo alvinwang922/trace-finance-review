@@ -23,6 +23,14 @@ npm run preview
 
 The app works locally without Base44. For authenticated AI explanation drafts and cloud review storage, follow [Base44 connection setup](base44/README.md).
 
+## Bright Data public merchant context
+
+Add `BRIGHTDATA_API_TOKEN` and `BRIGHTDATA_SERP_DATASET` (Google SERP scraper) or your actual `BRIGHTDATA_SERP_ZONE` name to `.env.local`, then restart Vite. A dataset takes precedence over a zone. Trace makes two small searches per merchant (identity and prices), each limited to one results page; location comes from the identity search when available. The browser receives at most four search hits and three places per response. The Maps full-information scraper expects individual place URLs and is not used for free-text lookup.
+
+Open a case and choose **Match this merchant**. Results appear as each lookup completes. Dataset jobs can take several minutes: the server starts one asynchronous job, polls its progress for up to ten minutes, and caches successful searches for five minutes. Failed lookups show a message and sample context is explicitly labeled illustrative. Dollar price snippets are used only for USD cases.
+
+The server keeps the token out of the browser. The API works with `npm run dev` and `npm run preview`. A static-only deployment of `dist/` needs a separate server-side `/api/serp` backend; these Vite hooks are not included in static assets. Search inputs send public merchant descriptors and names to Bright Data, not receipt files, employee details, or card credentials.
+
 ## What works
 
 - Import a combined CSV, validate its fields, and compare records grouped by an explicit case ID.
