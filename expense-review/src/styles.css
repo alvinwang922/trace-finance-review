@@ -69,3 +69,5 @@
 .line-row{border-top:1px solid #f0f2ec;color:#4f5f4a}.line-row span:nth-child(2),.line-row span:nth-child(3),.line-head span:nth-child(2),.line-head span:nth-child(3){text-align:right}
 .line-row.total{font-weight:600}.line-row.match svg{color:#6f9a5c}.line-row.differs{background:#fdf5f1}.line-row.differs svg{color:#b25f4a}.line-row.differs span:nth-child(2){color:#b25f4a;font-weight:600}
 .line-explanation{display:flex;gap:7px;align-items:flex-start;margin-top:9px;padding:10px 12px;border-radius:7px;background:#f4f8ec;border:1px solid #e3ebd5;font-size:10.5px;line-height:1.65;color:#3e5236}.line-explanation svg{margin-top:2px;color:var(--green)}
+.world-contrast{font-size:11px;line-height:1.7;color:#7a6a4f;background:#fbf7f0;border:1px solid #efe3cf;border-radius:8px;padding:10px 14px}.world-contrast strong{color:#8a5a2b}
+.reply-warning{display:flex;gap:7px;align-items:flex-start;margin:4px 0 10px;padding:9px 11px;border-radius:7px;background:#fdf5f1;border:1px solid #f1d9cf;color:#9a4e3b;font-size:10.5px;line-height:1.6}.reply-warning svg{margin-top:2px}

@@ -60,6 +60,17 @@ describe('line item comparison', () => {
     expect(result?.explanation).toContain('$17.20 (20%) higher');
   });
 
+  it('names a duplicate card posting without pointing at the employee', () => {
+    const result = compareLineItems([
+      record('e', 'expense', 18420, 'Water bill paid online: total $184.20.'),
+      record('r', 'receipt', 18420, 'Online payment confirmation: total $184.20.'),
+      record('c1', 'card', 18420, 'Visa posting.'),
+      record('c2', 'card', 18420, 'Second Visa posting, same amount.'),
+    ]);
+    expect(result?.cause).toBe('duplicate_posting');
+    expect(result?.question).toBeNull();
+  });
+
   it('stays silent when there is nothing to compare', () => {
     expect(compareLineItems(group('G04'))).toBeNull();
     expect(compareLineItems(group('G02'))).toBeNull();

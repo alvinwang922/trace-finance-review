@@ -28,7 +28,7 @@ export interface LineComparison {
   rows: LineRow[];
   /** Plain-language cause, only when the lines account for the whole difference. */
   explanation: string | null;
-  cause: 'tip' | 'tax' | 'fee' | 'base' | 'swapped_digits' | 'tip_after_receipt' | null;
+  cause: 'tip' | 'tax' | 'fee' | 'base' | 'swapped_digits' | 'tip_after_receipt' | 'duplicate_posting' | null;
   /** A neutral question that names the line, when one is needed. */
   question: string | null;
 }
@@ -142,6 +142,10 @@ export function compareLineItems(records: SourceRecord[]): LineComparison | null
       explanation = `The digits ${swap[0]} and ${swap[1]} are swapped: the receipt${cards.length && cardTotal === paperTotal ? ' and card' : ''} support ${money(paperTotal, currency)}, entered as ${money(claimTotal, currency)}. A typing slip, not a different amount.`;
       question = `Could ${money(paperTotal, currency)} have been entered as ${money(claimTotal, currency)}?`;
     }
+  } else if (cards.length >= 2 && cards.every((card) => card.amountCents === paperTotal) && cardTotal === paperTotal * cards.length) {
+    cause = 'duplicate_posting';
+    explanation = `The claim matches the receipt at ${money(paperTotal, currency)}, but the card shows ${cards.length} identical postings of that amount. The extra ${money(cardTotal - paperTotal, currency)} is a duplicate posting, not a different purchase. Nothing here points to the employee.`;
+    question = null;
   } else if (cards.length && cardTotal > paperTotal) {
     const extra = cardTotal - paperTotal;
     const share = Math.round((extra / paperTotal) * 100);

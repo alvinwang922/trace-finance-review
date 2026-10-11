@@ -11,6 +11,8 @@ interface Props {
   onLoadDemo: () => void;
   onOpenCase: (caseId: string) => void;
   onToast: (message: string) => void;
+  /** How many employees a group-by-person view would flag before outside factors are removed. */
+  personPatterns?: number;
 }
 
 interface Recorded { datasetId: string; recordedAt: string; runs: ResearchRun[] }
@@ -59,7 +61,7 @@ function RunResult({ run, cluster }: { run: ResearchRun; cluster: WorldCluster }
   </div>;
 }
 
-export function WorldContextView({ dataset, context, onLoadDemo, onOpenCase, onToast }: Props) {
+export function WorldContextView({ dataset, context, onLoadDemo, onOpenCase, onToast, personPatterns = 0 }: Props) {
   const [runs, setRuns] = useState<Record<string, ResearchRun>>({});
   const [running, setRunning] = useState<string | null>(null);
   const [liveSteps, setLiveSteps] = useState<ResearchStep[]>([]);
@@ -113,10 +115,11 @@ export function WorldContextView({ dataset, context, onLoadDemo, onOpenCase, onT
     </div>}
 
     {context.clusters.length > 0 && <div className="world-summary">
-      <span><strong>{totalCases}</strong> mismatches</span><ArrowRight size={14} />
-      <span><strong>{context.clusters.length}</strong> shared outside factors</span><ArrowRight size={14} />
+      <span><strong>{totalCases + context.isolated.length}</strong> mismatches</span><ArrowRight size={14} />
+      <span><strong>{context.clusters.length}</strong> shared outside factors ({totalCases} cases)</span><ArrowRight size={14} />
       <span><strong>{context.isolated.length}</strong> left for a person</span>
     </div>}
+    {context.clusters.length > 0 && personPatterns > 0 && <p className="world-contrast">Grouped by person, these mismatches would flag <strong>{personPatterns} employee{personPatterns === 1 ? '' : 's'}</strong> for repeated differences. Grouped by outside factor, {totalCases} of {totalCases + context.isolated.length} have a shared cause to check first.</p>}
 
     {context.clusters.map((cluster) => {
       const run = runs[cluster.id];
