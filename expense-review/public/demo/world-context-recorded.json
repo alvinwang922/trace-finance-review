@@ -1,37 +1,37 @@
 {
   "datasetId": "northstar-studio-april-2025",
-  "recordedAt": "2026-10-11T00:06:42.931Z",
+  "recordedAt": "2026-10-11T01:50:31.192Z",
   "runs": [
     {
       "clusterId": "duplicate_settlement:W01+W02+W03+W04",
       "mode": "recorded",
-      "startedAt": "2026-10-11T00:06:11.504Z",
-      "finishedAt": "2026-10-11T00:06:30.707Z",
+      "startedAt": "2026-10-11T01:48:56.628Z",
+      "finishedAt": "2026-10-11T01:49:29.503Z",
       "steps": [
         {
           "kind": "plan",
-          "text": "Hypothesis: Visa or InvoiceCloud processing incident around April 11–12, 2025. 3 searches planned."
+          "text": "Hypothesis: Visa or InvoiceCloud processing incident around April 11–13, 2025. 3 searches planned."
         },
         {
           "kind": "search",
-          "text": "Bright Data search returned 24 public results for: “InvoiceCloud Visa duplicate charges April 11-12 2025”, “InvoiceCloud Visa duplicate payments notice to customers April 2025”, “Visa charged twice April 2025 processing error”."
+          "text": "Bright Data search returned 24 public results for: “InvoiceCloud Visa duplicate charges April 11-13 2025”, “InvoiceCloud Visa duplicate payments notice to customers April 2025”, “Visa charged twice April 2025 processing error”."
         },
         {
           "kind": "score",
-          "text": "3 of 21 results match the event, network and dates in the snippet alone."
+          "text": "4 of 18 results match the event, network and dates in the snippet alone."
         },
         {
           "kind": "read",
-          "text": "Read 2 pages through Bright Data. wgeld.org contains the matching passage."
+          "text": "Read 3 pages through Bright Data. wgeld.org contains the matching passage."
         },
         {
           "kind": "rule",
-          "text": "Outside event: duplicate Visa settlements, April 11–12, 2025"
+          "text": "Outside event: duplicate Visa settlements, April 11–13, 2025"
         }
       ],
       "sources": [
         {
-          "query": "InvoiceCloud Visa duplicate charges April 11-12 2025",
+          "query": "InvoiceCloud Visa duplicate charges April 11-13 2025",
           "url": "https://www.wgeld.org/news/new-news-1/",
           "title": "Duplicate Visa Charges on InvoiceCloud Payments",
           "snippet": "Apr 17, 2025 — This issue resulted in issuers duplicating charges to their cardholders. The problem began on Friday and affected settlements until 9 AM ET on ...",
@@ -45,7 +45,7 @@
           }
         },
         {
-          "query": "InvoiceCloud Visa duplicate charges April 11-12 2025",
+          "query": "InvoiceCloud Visa duplicate charges April 11-13 2025",
           "url": "https://www.instagram.com/p/DIfI7ndt4mx/",
           "title": "Duplicate Visa Charges on InvoiceCloud Payments If you ...",
           "snippet": "If you made an online payment through InvoiceCloud between April 11–13, 2025, you may have been charged twice due to a processing error ...",
@@ -59,21 +59,21 @@
           }
         },
         {
-          "query": "InvoiceCloud Visa duplicate charges April 11-12 2025",
-          "url": "https://learn.microsoft.com/en-us/answers/questions/5660195/i-have-three-3-separate-draws-from-my-visa-card-ac",
-          "title": "I have three (3) separate draws from my Visa card account ...",
-          "snippet": "Jul 22, 2026 — I have three (3) charges to my Visa card which there is duplication on these charges. each charge in case we have duplicate charges taking place. you will need ...",
-          "score": 5,
-          "strong": false,
+          "query": "InvoiceCloud Visa duplicate payments notice to customers April 2025",
+          "url": "https://www.facebook.com/groups/2846753392239513/posts/4143782549203251/",
+          "title": "How to get a refund for a duplicate visa payment due ...",
+          "snippet": "⚠️ NOTICE: Duplicate Visa Charges on InvoiceCloud Payments If you made an online payment through InvoiceCloud between April 11–13, 2025 ...",
+          "score": 7,
+          "strong": true,
           "matched": {
             "event": true,
-            "date": false,
+            "date": true,
             "network": true,
-            "processor": false
+            "processor": true
           }
         },
         {
-          "query": "InvoiceCloud Visa duplicate payments notice to customers April 2025",
+          "query": "InvoiceCloud Visa duplicate charges April 11-13 2025",
           "url": "https://www.facebook.com/groups/2911556022334376/posts/3200196403470335/",
           "title": "vfs global duplicate payment issue",
           "snippet": "If you made an online payment through InvoiceCloud between April 11–13, 2025, you may have been charged twice due to a processing error ...",
@@ -87,25 +87,11 @@
           }
         },
         {
-          "query": "InvoiceCloud Visa duplicate charges April 11-12 2025",
-          "url": "https://flashcloud.com/knowledgebase/article/charged-twice-what-to-do",
-          "title": "Charged twice: what to do | Flashcloud KB",
-          "snippet": "Oct 1, 2026 — Open a billing ticket with both charge references first. Duplicate charges get verified against payment records and refunded once confirmed.",
-          "score": 3,
-          "strong": false,
-          "matched": {
-            "event": true,
-            "date": false,
-            "network": false,
-            "processor": false
-          }
-        },
-        {
-          "query": "InvoiceCloud Visa duplicate charges April 11-12 2025",
-          "url": "https://www.youtube.com/shorts/SpdC0g2zR7o",
-          "title": "DUPLICATE CHARGES ON CREDIT CARDS #visa ...",
-          "snippet": "Several users are reporting duplicate and multiple Visa charges.",
-          "score": 2,
+          "query": "InvoiceCloud Visa duplicate charges April 11-13 2025",
+          "url": "https://learn.microsoft.com/en-us/answers/questions/5660195/i-have-three-3-separate-draws-from-my-visa-card-ac",
+          "title": "I have three (3) separate draws from my Visa card account ...",
+          "snippet": "Jul 22, 2026 — I have three (3) charges to my Visa card which I do not understand and feel that there is duplication on these charges.",
+          "score": 5,
           "strong": false,
           "matched": {
             "event": true,
@@ -115,40 +101,80 @@
           }
         },
         {
-          "query": "InvoiceCloud Visa duplicate charges April 11-12 2025",
-          "url": "https://www.kkw.org/invoicecloud-faqs",
-          "title": "InvoiceCloud FAQ's | KK&W",
-          "snippet": "Customers will be assessed a convenience fee of $3.95 per transaction when using a credit card or debit card. Any single payment transaction will be limited to ...",
-          "score": 1,
+          "query": "InvoiceCloud Visa duplicate payments notice to customers April 2025",
+          "url": "https://www.chargeflow.io/blog/recurring-billing-chargebacks",
+          "title": "Recurring Billing Chargebacks: Reason Codes and Evidence",
+          "snippet": "Duplicate Charge Disputes: Visa 12.6.1 and Mastercard 4834. The cardholder says one charge was processed more than once. Visa 12.6.1 requires the same payment ...",
+          "score": 5,
           "strong": false,
           "matched": {
-            "event": false,
+            "event": true,
             "date": false,
-            "network": false,
-            "processor": true
+            "network": true,
+            "processor": false
           }
         },
         {
-          "query": "InvoiceCloud Visa duplicate payments notice to customers April 2025",
-          "url": "https://compliance.invoicecloud.net/restatedtermsandconditions",
-          "title": "Restated Terms & Conditions – InvoiceCloud",
-          "snippet": "Invoice Cloud will provide Biller with notice by email disclosing the pricing under which the added Payment Methods are made available.",
-          "score": 1,
+          "query": "Visa charged twice April 2025 processing error",
+          "url": "https://www.sbs.com.au/news/article/nab-sorry-for-double-charging-error/wbzcj3q7n",
+          "title": "NAB sorry for double-charging error",
+          "snippet": "3 June 2014 — National Australia Bank says it has corrected a glitch that led to some Visa Debit cardholders being charged twice for weekend purchases.",
+          "score": 5,
           "strong": false,
           "matched": {
-            "event": false,
+            "event": true,
             "date": false,
-            "network": false,
-            "processor": true
+            "network": true,
+            "processor": false
+          }
+        },
+        {
+          "query": "Visa charged twice April 2025 processing error",
+          "url": "https://www.stuff.co.nz/business/79126536/asb-customers-double-charged-for-visa-transactions-in-recent-days",
+          "title": "ASB customers double charged for Visa transactions in ...",
+          "snippet": "19 Apr 2016 — The bank confirmed on Wednesday that some Visa credit card transactions on April 15 and 16 were wrongly processed again on April 18.",
+          "score": 5,
+          "strong": false,
+          "matched": {
+            "event": true,
+            "date": false,
+            "network": true,
+            "processor": false
           }
         }
       ],
       "ruling": {
         "verdict": "outside_event",
-        "headline": "Outside event: duplicate Visa settlements, April 11–12, 2025",
+        "headline": "Outside event: duplicate Visa settlements, April 11–13, 2025",
         "detail": "wgeld.org documents duplicate Visa charges on InvoiceCloud payments in this window. All 4 extra postings (Maya Chen, Sam Rivera, Alex Morgan, Jordan Ellis) fall inside it, at 4 different merchants. This is a processing error, not employee error. No one needs to be contacted.",
         "quote": "“ InvoiceCloud has received communication from Chase Paymentech that Visa has confirmed that they experienced an issue on their end over the weekend. This issue resulted in issuers duplicating charges to their cardholders. The problem began on Friday and affected settlements until 9 AM ET on Sunday, at which point Visa reverted the change on their end.",
         "sourceUrl": "https://www.wgeld.org/news/new-news-1/",
+        "breakdown": [
+          {
+            "caseId": "northstar-studio-april-2025:W01",
+            "label": "Northgate Water District · Maya Chen",
+            "detail": "$184.20 posted twice (Apr 11 and Apr 12), inside April 11–13, 2025",
+            "ok": true
+          },
+          {
+            "caseId": "northstar-studio-april-2025:W02",
+            "label": "Bayline Gas & Electric · Sam Rivera",
+            "detail": "$412.75 posted twice (Apr 11 and Apr 12), inside April 11–13, 2025",
+            "ok": true
+          },
+          {
+            "caseId": "northstar-studio-april-2025:W03",
+            "label": "Larkspur Mutual Insurance · Alex Morgan",
+            "detail": "$268.00 posted twice (Apr 12 and Apr 13), inside April 11–13, 2025",
+            "ok": true
+          },
+          {
+            "caseId": "northstar-studio-april-2025:W04",
+            "label": "Marina Parking Authority · Jordan Ellis",
+            "detail": "$95.00 posted twice (Apr 12 and Apr 13), inside April 11–13, 2025",
+            "ok": true
+          }
+        ],
         "actions": [
           "Draft dispute: duplicate Visa charge of $184.20 at Northgate Water District (W01). Reason: duplicate processing.",
           "Draft dispute: duplicate Visa charge of $412.75 at Bayline Gas & Electric (W02). Reason: duplicate processing.",
@@ -156,25 +182,30 @@
           "Draft dispute: duplicate Visa charge of $95.00 at Marina Parking Authority (W04). Reason: duplicate processing.",
           "Clear 4 employees. Total to recover: $959.95"
         ]
-      }
+      },
+      "merchantChecks": []
     },
     {
       "clusterId": "tip_after_authorization:W05+W06+W07",
       "mode": "recorded",
-      "startedAt": "2026-10-11T00:06:30.707Z",
-      "finishedAt": "2026-10-11T00:06:42.931Z",
+      "startedAt": "2026-10-11T01:49:29.503Z",
+      "finishedAt": "2026-10-11T01:50:31.192Z",
       "steps": [
         {
           "kind": "plan",
-          "text": "Hypothesis: Toast adds the tip after the card is authorized. 2 searches planned."
+          "text": "Hypothesis: Toast adds the tip after the card is authorized. 2 searches planned, plus a Toast check for 3 merchants."
         },
         {
           "kind": "search",
-          "text": "Bright Data search returned 16 public results for: “Mastercard restaurant tip adjustment final amount higher than authorization”, “restaurant card authorized before tip final charge includes tip receipt lower”."
+          "text": "Bright Data search returned 16 public results for: “Toast Mastercard tip tolerance”, “Mastercard restaurant tip adjustment final amount higher than authorization”."
+        },
+        {
+          "kind": "search",
+          "text": "3 of 3 merchants confirmed on Toast from their public pages (Bodega SF, Taishoken San Francisco, Ramenwell)."
         },
         {
           "kind": "score",
-          "text": "6 of 16 results match the mechanism in the snippet alone."
+          "text": "3 of 13 results match the mechanism in the snippet alone."
         },
         {
           "kind": "read",
@@ -187,10 +218,24 @@
       ],
       "sources": [
         {
-          "query": "Mastercard restaurant tip adjustment final amount higher than authorization",
-          "url": "https://www.quora.com/How-do-restaurants-apply-the-tip-you-leave-on-the-receipt-if-they-already-handed-back-your-credit-card",
-          "title": "How do restaurants apply the tip you leave on the receipt if ...",
-          "snippet": "The restaurant performs an authorization on your card and holds (reserves) the amount of the meal plus an estimated 20% for a tip. You may see ...",
+          "query": "Toast Mastercard tip tolerance",
+          "url": "https://www.reddit.com/r/Waiters/comments/1hyinq9/mastercard_not_letting_20_plus_tips/",
+          "title": "Mastercard not letting 20% plus tips : r/Waiters",
+          "snippet": "The use of the 20% tip tolerance enables a restaurant merchant to add a tip amount after the authorization was approved. The tip amount must be ...",
+          "score": 7,
+          "strong": true,
+          "matched": {
+            "event": true,
+            "date": false,
+            "network": true,
+            "processor": false
+          }
+        },
+        {
+          "query": "Toast Mastercard tip tolerance",
+          "url": "https://support.toasttab.com/en/article/MasterCard-20-Tip-Tolerance-Reinstated-for-Card-not-present-Restaurants",
+          "title": "20% Tip Tolerance for Card-not-present Restaurants",
+          "snippet": "Dec 17, 2025 — The use of the 20% tip tolerance enables a restaurant merchant to add a tip amount after the authorization was approved. The tip amount must be ...",
           "score": 5,
           "strong": true,
           "matched": {
@@ -204,7 +249,7 @@
           "query": "Mastercard restaurant tip adjustment final amount higher than authorization",
           "url": "https://rapidpayments.io/blogs/tip-adjustment-restaurant-payment-processing/",
           "title": "How Tip Adjustment Works (and What Can Go Wrong)",
-          "snippet": "Aug 24, 2026 — If the final tip-adjusted total is significantly higher than the original pre-authorized amount, some processors and card networks may ...",
+          "snippet": "24 Aug 2026 — If the final tip-adjusted total is significantly higher than the original pre-authorized amount, some processors and card networks may ...",
           "score": 5,
           "strong": true,
           "matched": {
@@ -215,52 +260,24 @@
           }
         },
         {
-          "query": "Mastercard restaurant tip adjustment final amount higher than authorization",
-          "url": "https://support.toasttab.com/en/article/MasterCard-20-Tip-Tolerance-Reinstated-for-Card-not-present-Restaurants",
-          "title": "20% Tip Tolerance for Card-not-present Restaurants",
-          "snippet": "Dec 17, 2025 — The tip amount must be within 20% of the authorization amount. The portion of the tip amount that exceeds the 20% tolerance may be charged back ...",
-          "score": 5,
-          "strong": true,
+          "query": "Toast Mastercard tip tolerance",
+          "url": "https://www.linkedin.com/posts/epinortheast_restaurantowners-toastpos-paymentprocessing-activity-7491253048284200960-P8zz",
+          "title": "Toast Processing Rate Increases for Visa Mastercard ...",
+          "snippet": "Aug 6, 2026 — For restaurants, it accounts for tips, split checks, chargebacks and tip adjustments. Then it flags when the POS and the bank deposit don't ...",
+          "score": 3,
+          "strong": false,
           "matched": {
-            "event": true,
+            "event": false,
             "date": false,
-            "network": false,
-            "processor": false
+            "network": true,
+            "processor": true
           }
         },
         {
-          "query": "restaurant card authorized before tip final charge includes tip receipt lower",
-          "url": "https://www.reddit.com/r/explainlikeimfive/comments/135z0i3/eli5_how_do_restaurants_charge_your_card_for_the/",
-          "title": "ELI5: How do restaurants charge your card for the tip if they ...",
-          "snippet": "It's called \"Batching\". When discussing cards, people would generally say the initial (pre-tip) amount is \"pending\" and then it \"posts\" with ...",
-          "score": 5,
-          "strong": true,
-          "matched": {
-            "event": true,
-            "date": false,
-            "network": false,
-            "processor": false
-          }
-        },
-        {
-          "query": "restaurant card authorized before tip final charge includes tip receipt lower",
-          "url": "https://celermerchants.com/guides/restaurant-tipping-and-surcharges/",
-          "title": "Restaurant Tipping, Service Charges and Card Surcharges",
-          "snippet": "Sep 29, 2026 — At a table-service restaurant, the card is usually authorized for the bill, then the tip is added and the final amount is captured later.",
-          "score": 5,
-          "strong": true,
-          "matched": {
-            "event": true,
-            "date": false,
-            "network": false,
-            "processor": false
-          }
-        },
-        {
-          "query": "Mastercard restaurant tip adjustment final amount higher than authorization",
-          "url": "https://community.squareup.com/t5/Troubleshooting/How-can-i-adjust-the-amount-of-tip-allowed-per-transaction/m-p/720727",
-          "title": "How can i adjust the amount of tip allowed per transaction",
-          "snippet": "Apr 6, 2024 — MasterCard, Visa, etc, have something called a tip tolerance amount. In the case of MC it is 25% and for Visa it is 20% (last time I checked).",
+          "query": "Toast Mastercard tip tolerance",
+          "url": "https://support.mindbodyonline.com/s/article/Tip-Tolerance-Visa-Prepaid-gift-cards",
+          "title": "Tip tolerance on prepaid gift cards (Visa, MasterCard, ...",
+          "snippet": "Tip tolerance is a safety measure that ensures that the prepaid gift cards are not overcharged due to leaving a tip. Visa, MasterCard, Discover, AMEX, and ...",
           "score": 2,
           "strong": false,
           "matched": {
@@ -271,24 +288,38 @@
           }
         },
         {
-          "query": "restaurant card authorized before tip final charge includes tip receipt lower",
-          "url": "https://www.facebook.com/groups/WorcesterEats/posts/7538281309575011/",
-          "title": "Why do some restaurants charge the bill and tip as ...",
-          "snippet": "Aaron Nelson it's because it's a pre- authorization that's when they initially swipe your card and it's only for the amount of the bill then you ...",
-          "score": 2,
-          "strong": true,
+          "query": "Toast Mastercard tip tolerance",
+          "url": "https://www.cardfellow.com/blog/tips-credit-card-affect-restaurant",
+          "title": "How Tips Paid by Credit Card Could Affect Your Restaurant",
+          "snippet": "A 20% tip tolerance is still available for card-present transactions that are NOT chip and pin or contactless. This means a large number of chip cards WILL ...",
+          "score": 0,
+          "strong": false,
           "matched": {
-            "event": true,
+            "event": false,
             "date": false,
             "network": false,
             "processor": false
           }
         },
         {
-          "query": "Mastercard restaurant tip adjustment final amount higher than authorization",
-          "url": "https://www.cardfellow.com/blog/tips-credit-card-affect-restaurant",
-          "title": "How Tips Paid by Credit Card Could Affect Your Restaurant",
-          "snippet": "Tips paid by credit card that are over a certain percentage of the bill can trigger flags for fraud or cause your transaction to downgrade and cost more.",
+          "query": "Toast Mastercard tip tolerance",
+          "url": "https://toastportaltesting.redoc.ly/orders/operation/ordersChecksPaymentsPost/",
+          "title": "Post payments",
+          "snippet": "Adds one or more payments to a check in an existing order. Include information about the payments in an array of Payment objects in the message body.",
+          "score": 0,
+          "strong": false,
+          "matched": {
+            "event": false,
+            "date": false,
+            "network": false,
+            "processor": false
+          }
+        },
+        {
+          "query": "Toast Mastercard tip tolerance",
+          "url": "https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/transaction-processing-rules.pdf",
+          "title": "Transaction Processing Rules",
+          "snippet": "Jun 10, 2025 — The Issuer must not place a hold on the Cardholder's Account in excess of the total authorized amount (inclusive of the 20 percent tolerance, ...",
           "score": 0,
           "strong": false,
           "matched": {
@@ -305,12 +336,49 @@
         "detail": "support.toasttab.com explains that the final card charge includes the tip added after authorization, so a receipt photographed at the table shows less. All 3 cases (Maya Chen, Sam Rivera, Jordan Ellis) fit: the company card paid the full amount and no one gained. This is a capture-process fix, not a conduct issue.",
         "quote": "In 2017, MasterCard reinstated the use of the 20% tip tolerance to card-not-present (CNP) transactions conducted by U.S. The use of the 20% tip tolerance enables a restaurant merchant to add a tip amount after the authorization was approved.",
         "sourceUrl": "https://support.toasttab.com/en/article/MasterCard-20-Tip-Tolerance-Reinstated-for-Card-not-present-Restaurants",
+        "breakdown": [
+          {
+            "caseId": "northstar-studio-april-2025:W05",
+            "label": "Bodega SF · Maya Chen",
+            "detail": "+$17.20 = 20% of the $86.00 receipt · within the 20% tip tolerance · confirmed on Toast",
+            "ok": true
+          },
+          {
+            "caseId": "northstar-studio-april-2025:W06",
+            "label": "Taishoken San Francisco · Sam Rivera",
+            "detail": "+$9.81 = 18% of the $54.50 receipt · within the 20% tip tolerance · confirmed on Toast",
+            "ok": true
+          },
+          {
+            "caseId": "northstar-studio-april-2025:W07",
+            "label": "Ramenwell · Jordan Ellis",
+            "detail": "+$23.76 = 18% of the $132.00 receipt · within the 20% tip tolerance · confirmed on Toast",
+            "ok": true
+          }
+        ],
         "actions": [
           "Correct 3 entries to the card amount (+$50.77 in tips)",
           "One process fix for everyone: photograph the signed copy with the tip, not the itemized receipt",
           "No employee contact needed"
         ]
-      }
+      },
+      "merchantChecks": [
+        {
+          "merchant": "Bodega SF",
+          "verified": true,
+          "url": "https://order.toasttab.com/online/bodega-sf"
+        },
+        {
+          "merchant": "Taishoken San Francisco",
+          "verified": true,
+          "url": "https://order.toasttab.com/online/taishokensf"
+        },
+        {
+          "merchant": "Ramenwell",
+          "verified": true,
+          "url": "https://order.toasttab.com/online/ramenwell-3378-18th-st"
+        }
+      ]
     }
   ]
 }

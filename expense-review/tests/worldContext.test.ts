@@ -46,7 +46,7 @@ describe('world context grouping', () => {
   it('builds searches from network, processor and dates only, never people', () => {
     const { clusters } = contextFor(worldDemoDataset);
     const queries = clusters.flatMap((cluster) => cluster.hypothesis.queries).join(' ');
-    for (const name of ['Maya', 'Sam', 'Alex', 'Jordan', 'Northgate', 'Fogline']) expect(queries).not.toContain(name);
+    for (const name of ['Maya', 'Sam', 'Alex', 'Jordan', 'Northgate', 'Bodega', 'Taishoken', 'Ramenwell']) expect(queries).not.toContain(name);
   });
 });
 

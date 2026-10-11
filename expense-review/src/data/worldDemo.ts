@@ -47,18 +47,19 @@ export const worldDemoDataset: Dataset = {
     record('W04-C01', '2025-04-12', 'Marina Parking Authority', 'Jordan Ellis', 'card', 9500, 'Visa posting INVOICECLOUD*MARINA PARKING.', { reference: 'VISA-0412-8840', ...billPay }),
     record('W04-C02', '2025-04-13', 'Marina Parking Authority', 'Jordan Ellis', 'card', 9500, 'Second Visa posting, same descriptor and amount, new transaction reference.', { reference: 'VISA-0413-0392', ...billPay }),
 
-    // Three employees at three Toast restaurants: the receipt was photographed before the tip was written in.
-    record('W05-E01', '2025-04-03', 'Fogline Kitchen', 'Maya Chen', 'expense', 8600, 'Client lunch entered from the receipt photo: $86.00.', { reference: 'FK-3391' }),
-    record('W05-R01', '2025-04-03', 'Fogline Kitchen', 'Maya Chen', 'receipt', 8600, 'Itemized receipt photo: food $79.00, tax $7.00, total $86.00. Tip line blank.', { reference: 'FK-3391' }),
-    record('W05-C01', '2025-04-04', 'Fogline Kitchen', 'Maya Chen', 'card', 10320, 'Mastercard posting TST*FOGLINE KITCHEN, settled amount.', { reference: 'MC-0404-3391', ...toast }),
+    // Three employees at three real San Francisco restaurants that take payments through Toast (each has a public
+    // order.toasttab.com page). The purchases are fictional: the receipt was photographed before the tip was written in.
+    record('W05-E01', '2025-04-03', 'Bodega SF', 'Maya Chen', 'expense', 8600, 'Client lunch entered from the receipt photo: $86.00.', { reference: 'BSF-3391' }),
+    record('W05-R01', '2025-04-03', 'Bodega SF', 'Maya Chen', 'receipt', 8600, 'Itemized receipt photo: food $79.00, tax $7.00, total $86.00. Tip line blank.', { reference: 'BSF-3391' }),
+    record('W05-C01', '2025-04-04', 'Bodega SF', 'Maya Chen', 'card', 10320, 'Mastercard posting TST*BODEGA SF, settled amount.', { reference: 'MC-0404-3391', ...toast }),
 
-    record('W06-E01', '2025-04-09', 'Ardent Noodle Bar', 'Sam Rivera', 'expense', 5450, 'Team dinner entered from the receipt photo: $54.50.', { reference: 'ANB-1207' }),
-    record('W06-R01', '2025-04-09', 'Ardent Noodle Bar', 'Sam Rivera', 'receipt', 5450, 'Itemized receipt photo: food $50.00, tax $4.50, total $54.50. Tip line blank.', { reference: 'ANB-1207' }),
-    record('W06-C01', '2025-04-10', 'Ardent Noodle Bar', 'Sam Rivera', 'card', 6431, 'Mastercard posting TST*ARDENT NOODLE, settled amount.', { reference: 'MC-0410-1207', ...toast }),
+    record('W06-E01', '2025-04-09', 'Taishoken San Francisco', 'Sam Rivera', 'expense', 5450, 'Team dinner entered from the receipt photo: $54.50.', { reference: 'TS-1207' }),
+    record('W06-R01', '2025-04-09', 'Taishoken San Francisco', 'Sam Rivera', 'receipt', 5450, 'Itemized receipt photo: food $50.00, tax $4.50, total $54.50. Tip line blank.', { reference: 'TS-1207' }),
+    record('W06-C01', '2025-04-10', 'Taishoken San Francisco', 'Sam Rivera', 'card', 6431, 'Mastercard posting TST*TAISHOKEN SF, settled amount.', { reference: 'MC-0410-1207', ...toast }),
 
-    record('W07-E01', '2025-04-22', 'Cinder & Salt', 'Jordan Ellis', 'expense', 13200, 'Client dinner entered from the receipt photo: $132.00.', { reference: 'CS-5560' }),
-    record('W07-R01', '2025-04-22', 'Cinder & Salt', 'Jordan Ellis', 'receipt', 13200, 'Itemized receipt photo: food $121.00, tax $11.00, total $132.00. Tip line blank.', { reference: 'CS-5560' }),
-    record('W07-C01', '2025-04-23', 'Cinder & Salt', 'Jordan Ellis', 'card', 15576, 'Mastercard posting TST*CINDER AND SALT, settled amount.', { reference: 'MC-0423-5560', ...toast }),
+    record('W07-E01', '2025-04-22', 'Ramenwell', 'Jordan Ellis', 'expense', 13200, 'Team dinner entered from the receipt photo: $132.00.', { reference: 'RW-5560' }),
+    record('W07-R01', '2025-04-22', 'Ramenwell', 'Jordan Ellis', 'receipt', 13200, 'Itemized receipt photo: food $121.00, tax $11.00, total $132.00. Tip line blank.', { reference: 'RW-5560' }),
+    record('W07-C01', '2025-04-23', 'Ramenwell', 'Jordan Ellis', 'card', 15576, 'Mastercard posting TST*RAMENWELL, settled amount.', { reference: 'MC-0423-5560', ...toast }),
 
     // One mismatch with no shared outside factor: it stays with a reviewer.
     record('W08-E01', '2025-04-17', 'Pier 9 Print Shop', 'Alex Morgan', 'expense', 28650, 'Event banners submitted at $286.50.', { reference: 'P9-0417' }),

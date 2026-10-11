@@ -4,9 +4,9 @@ Northstar Studio | April 2025
 EXPENSE SUBMISSION
 Record ID: W05-E01
 Case group: W05
-Reference: FK-3391
+Reference: BSF-3391
 Date: 2025-04-03
-Merchant: Fogline Kitchen
+Merchant: Bodega SF
 Employee: Maya Chen
 Amount: USD 86.00
 

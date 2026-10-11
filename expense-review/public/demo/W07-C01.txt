@@ -6,13 +6,13 @@ Record ID: W07-C01
 Case group: W07
 Reference: MC-0423-5560
 Date: 2025-04-23
-Merchant: Cinder & Salt
+Merchant: Ramenwell
 Employee: Jordan Ellis
 Card network: Mastercard
 Processor: Toast
 Amount: USD 155.76
 
-Mastercard posting TST*CINDER AND SALT, settled amount.
+Mastercard posting TST*RAMENWELL, settled amount.
 
 This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
 Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

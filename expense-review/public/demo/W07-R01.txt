@@ -4,9 +4,9 @@ Northstar Studio | April 2025
 RECEIPT EXCERPT
 Record ID: W07-R01
 Case group: W07
-Reference: CS-5560
+Reference: RW-5560
 Date: 2025-04-22
-Merchant: Cinder & Salt
+Merchant: Ramenwell
 Employee: Jordan Ellis
 Amount: USD 132.00
 

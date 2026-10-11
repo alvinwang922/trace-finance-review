@@ -19,6 +19,10 @@ export interface ClusterCase {
   date: string;
   /** The amount in question: the extra posting, or the gap between card and receipt. */
   amountCents: number;
+  /** What the amount is measured against: the payment amount, or the receipt total. */
+  baseCents: number;
+  /** Card posting dates for the case. */
+  postedDates: string[];
   currency: string;
 }
 
@@ -59,8 +63,14 @@ export interface ScoredSource extends SearchHit {
   matched: { event: boolean; date: boolean; network: boolean; processor: boolean };
 }
 
+export interface BreakdownRow { caseId: string; label: string; detail: string; ok: boolean }
+
+export interface MerchantCheck { merchant: string; verified: boolean; url: string | null }
+
 export interface Ruling {
   verdict: 'outside_event' | 'shared_mechanism' | 'no_outside_cause';
+  /** One line per case: why it fits (or doesn't fit) the outside cause. */
+  breakdown?: BreakdownRow[];
   headline: string;
   detail: string;
   quote: string | null;
@@ -78,6 +88,7 @@ export interface ResearchRun {
   steps: ResearchStep[];
   sources: ScoredSource[];
   ruling: Ruling;
+  merchantChecks?: MerchantCheck[];
 }
 
 export interface ResearchTransport {
@@ -91,6 +102,17 @@ const MONTH_ALIASES: Record<string, number> = {
   jan: 0, ene: 0, feb: 1, mar: 2, apr: 3, abr: 3, may: 4, jun: 5, jul: 6, aug: 7, ago: 7, sep: 8, sept: 8, oct: 9, nov: 10, dec: 11, dic: 11,
 };
 MONTHS.forEach((name, index) => { MONTH_ALIASES[name] = index; });
+
+const PROCESSOR_SITES: Record<string, { query: string; domain: RegExp }> = {
+  toast: { query: 'toasttab', domain: /(^|\.)toasttab\.com$/i },
+  square: { query: 'square.site OR squareup', domain: /(^|\.)(square\.site|squareup\.com)$/i },
+  clover: { query: 'clover.com', domain: /(^|\.)clover\.com$/i },
+};
+
+function shortDate(iso: string): string {
+  const d = longDate(iso);
+  return `${d.month.slice(0, 3)} ${d.day}`;
+}
 
 const SOCIAL = /(^|\.)(instagram|facebook|youtube|tiktok|x|twitter|threads)\.com$/i;
 const EVENT_TERMS: Record<ClusterSignature, RegExp[]> = {
@@ -131,7 +153,7 @@ function cardMeta(records: SourceRecord[]): { network: string | null; processor:
 interface Signal { signature: ClusterSignature; case: ClusterCase; network: string | null; processor: string | null }
 
 /** One extra card posting with the same amount, within two days, on top of an otherwise matching purchase. */
-function duplicateSignal(records: SourceRecord[]): { amountCents: number; date: string } | null {
+function duplicateSignal(records: SourceRecord[]): { amountCents: number; date: string; baseCents: number; postedDates: string[] } | null {
   const cards = records.filter((record) => record.source === 'card').sort((a, b) => a.date.localeCompare(b.date));
   const expense = sum(records.filter((record) => record.source === 'expense'));
   const receipts = sum(records.filter((record) => record.source === 'receipt'));
@@ -140,7 +162,7 @@ function duplicateSignal(records: SourceRecord[]): { amountCents: number; date: 
     for (let j = i + 1; j < cards.length; j += 1) {
       const same = cards[i].amountCents === cards[j].amountCents && days(cards[i].date, cards[j].date) <= 2;
       if (same && sum(cards) - cards[i].amountCents === expense && (!receipts || receipts === expense)) {
-        return { amountCents: cards[i].amountCents, date: cards[i].date };
+        return { amountCents: cards[i].amountCents, date: cards[i].date, baseCents: cards[i].amountCents, postedDates: [cards[i].date, cards[j].date] };
       }
     }
   }
@@ -148,7 +170,7 @@ function duplicateSignal(records: SourceRecord[]): { amountCents: number; date: 
 }
 
 /** Card settled 10–30% above a receipt that matches the claim: the tip was added after the receipt was captured. */
-function tipSignal(records: SourceRecord[]): { amountCents: number; date: string } | null {
+function tipSignal(records: SourceRecord[]): { amountCents: number; date: string; baseCents: number; postedDates: string[] } | null {
   const cards = records.filter((record) => record.source === 'card');
   const card = sum(cards);
   const receipt = sum(records.filter((record) => record.source === 'receipt'));
@@ -156,7 +178,8 @@ function tipSignal(records: SourceRecord[]): { amountCents: number; date: string
   if (!cards.length || !receipt || receipt !== expense || records.some((record) => record.source === 'refund')) return null;
   const ratio = (card - receipt) / receipt;
   if (ratio < 0.1 || ratio > 0.3) return null;
-  return { amountCents: card - receipt, date: cards.map((record) => record.date).sort()[0] };
+  const dates = cards.map((record) => record.date).sort();
+  return { amountCents: card - receipt, date: dates[0], baseCents: receipt, postedDates: dates };
 }
 
 function queriesFor(signature: ClusterSignature, network: string | null, processor: string | null, start: string, end: string): Hypothesis {
@@ -178,8 +201,8 @@ function queriesFor(signature: ClusterSignature, network: string | null, process
     kind: 'mechanism',
     label: `${processor || 'Restaurant point-of-sale'} adds the tip after the card is authorized`,
     queries: [
+      `${[processor, network].filter(Boolean).join(' ')} tip tolerance`.trim(),
       `${network || 'card'} restaurant tip adjustment final amount higher than authorization`,
-      'restaurant card authorized before tip final charge includes tip receipt lower',
     ],
   };
 }
@@ -222,8 +245,10 @@ export function findWorldContext(dataset: Dataset, cases: ReviewCase[]): WorldCo
       if (employees.length < 2) continue;
       const { network, processor } = group[0];
       const groupCases = group.map((signal) => signal.case);
-      const windowStart = groupCases[0].date;
-      const windowEnd = groupCases[groupCases.length - 1].date;
+      // The window covers every posting, including a duplicate that settled a day later.
+      const allDates = groupCases.flatMap((item) => item.postedDates.length ? item.postedDates : [item.date]).sort();
+      const windowStart = allDates[0];
+      const windowEnd = allDates[allDates.length - 1];
       const totalCents = groupCases.reduce((total, item) => total + item.amountCents, 0);
       const via = [network, processor && `via ${processor}`].filter(Boolean).join(' ');
       clusters.push({
@@ -332,8 +357,28 @@ export function extractQuote(cluster: WorldCluster, text: string): string | null
   return quote.length > 420 ? `${quote.slice(0, 417)}…` : quote;
 }
 
-export function ruleCluster(cluster: WorldCluster, sources: ScoredSource[], quote: { url: string; text: string } | null): Ruling {
+export function ruleCluster(
+  cluster: WorldCluster,
+  sources: ScoredSource[],
+  quote: { url: string; text: string } | null,
+  merchantChecks: MerchantCheck[] = [],
+): Ruling {
   const best = sources.find((source) => source.strong && quote && source.url === quote.url) || sources.find((source) => source.strong) || null;
+  // A tolerance stated by the source (e.g. "20% tip tolerance") becomes the bar each case is checked against.
+  const toleranceText = [quote?.text ?? '', ...sources.filter((source) => source.strong).map((source) => `${source.title} ${source.snippet}`)].join(' ');
+  const tolerance = Number(toleranceText.match(/(\d{1,2})\s*%\s*tip tolerance/i)?.[1] || 0) || null;
+  const breakdown: BreakdownRow[] = cluster.cases.map((item) => {
+    const label = `${item.merchant} · ${item.employee}`;
+    if (cluster.signature === 'duplicate_settlement') {
+      const dates = item.postedDates.map(shortDate).join(' and ');
+      return { caseId: item.caseId, label, detail: `${money(item.amountCents, item.currency)} posted twice (${dates}), inside ${describeWindow(cluster.windowStart, cluster.windowEnd)}`, ok: Boolean(best) };
+    }
+    const pct = Math.round((item.amountCents / item.baseCents) * 100);
+    const check = merchantChecks.find((entry) => entry.merchant === item.merchant);
+    const withinTolerance = tolerance ? pct <= tolerance : pct <= 30;
+    const parts = [`+${money(item.amountCents, item.currency)} = ${pct}% of the ${money(item.baseCents, item.currency)} receipt`, tolerance ? (withinTolerance ? `within the ${tolerance}% tip tolerance` : `above the ${tolerance}% tip tolerance`) : null, check ? (check.verified ? `confirmed on ${cluster.processor}` : `not confirmed on ${cluster.processor}`) : null];
+    return { caseId: item.caseId, label, detail: parts.filter(Boolean).join(' · '), ok: Boolean(best) && withinTolerance && (!check || check.verified) };
+  });
   const names = cluster.employees.join(', ');
   const window = describeWindow(cluster.windowStart, cluster.windowEnd);
   if (!best) {
@@ -341,7 +386,7 @@ export function ruleCluster(cluster: WorldCluster, sources: ScoredSource[], quot
       verdict: 'no_outside_cause',
       headline: 'No outside cause found',
       detail: `Trace searched the public web and found nothing that explains these ${cluster.cases.length} cases together. Review them one at a time before contacting anyone.`,
-      quote: null, sourceUrl: null,
+      quote: null, sourceUrl: null, breakdown,
       actions: cluster.cases.map((item) => `Keep ${item.groupId} (${item.merchant}, ${item.employee}) in the review queue`),
     };
   }
@@ -352,6 +397,7 @@ export function ruleCluster(cluster: WorldCluster, sources: ScoredSource[], quot
       detail: `${domain(best.url)} documents duplicate ${cluster.network || 'card'} charges${cluster.processor ? ` on ${cluster.processor} payments` : ''} in this window. All ${cluster.cases.length} extra postings (${names}) fall inside it, at ${cluster.cases.length} different merchants. This is a processing error, not employee error. No one needs to be contacted.`,
       quote: quote?.text ?? null,
       sourceUrl: quote?.url ?? best.url,
+      breakdown,
       actions: [
         ...cluster.cases.map((item) => `Draft dispute: duplicate ${cluster.network || 'card'} charge of ${money(item.amountCents, item.currency)} at ${item.merchant} (${item.groupId}). Reason: duplicate processing.`),
         `Clear ${cluster.employees.length} employees. Total to recover: ${money(cluster.totalCents, cluster.currency)}`,
@@ -364,6 +410,7 @@ export function ruleCluster(cluster: WorldCluster, sources: ScoredSource[], quot
     detail: `${domain(best.url)} explains that the final card charge includes the tip added after authorization, so a receipt photographed at the table shows less. All ${cluster.cases.length} cases (${names}) fit: the company card paid the full amount and no one gained. This is a capture-process fix, not a conduct issue.`,
     quote: quote?.text ?? null,
     sourceUrl: quote?.url ?? best.url,
+    breakdown,
     actions: [
       `Correct ${cluster.cases.length} entries to the card amount (+${money(cluster.totalCents, cluster.currency)} in tips)`,
       'One process fix for everyone: photograph the signed copy with the tip, not the itemized receipt',
@@ -381,13 +428,35 @@ export async function runWorldResearch(
   const steps: ResearchStep[] = [];
   const log = (step: ResearchStep) => { steps.push(step); onStep(step); };
 
-  log({ kind: 'plan', text: `Hypothesis: ${cluster.hypothesis.label}. ${cluster.hypothesis.queries.length} searches planned.` });
+  // For a point-of-sale mechanism, also confirm each merchant takes payments through that processor.
+  // Merchant names are public businesses; employee names are never searched.
+  const site = cluster.hypothesis.kind === 'mechanism' && cluster.processor ? PROCESSOR_SITES[cluster.processor.toLowerCase()] : undefined;
+  const merchants = site ? [...new Set(cluster.cases.map((item) => item.merchant))].slice(0, 4) : [];
+  // Two phrasings per merchant: search results for a single phrasing vary a lot between runs.
+  const merchantQueries = (merchant: string) => [`${merchant} order online ${site?.query ?? ''}`.trim(), `${site?.query ?? ''} ${merchant}`.trim()];
+  // The page must be on the processor's site and name the merchant, not just be a login page.
+  const nameToken = (merchant: string) => merchant.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).find((word) => word.length >= 3) ?? merchant.toLowerCase();
+  log({ kind: 'plan', text: `Hypothesis: ${cluster.hypothesis.label}. ${cluster.hypothesis.queries.length} searches planned${merchants.length ? `, plus a ${cluster.processor} check for ${merchants.length} merchants` : ''}.` });
   let hits: SearchHit[] = [];
+  let merchantHits: SearchHit[] = [];
   try {
-    hits = await transport.search(cluster.hypothesis.queries);
+    const lookupQueries = merchants.flatMap(merchantQueries);
+    const all = await transport.search([...cluster.hypothesis.queries, ...lookupQueries]);
+    const lookups = new Set(lookupQueries);
+    hits = all.filter((hit) => !lookups.has(hit.query));
+    merchantHits = all.filter((hit) => lookups.has(hit.query));
     log({ kind: 'search', text: `Bright Data search returned ${hits.length} public results for: ${cluster.hypothesis.queries.map((query) => `“${query}”`).join(', ')}.` });
   } catch (error) {
     log({ kind: 'error', text: `Search failed: ${error instanceof Error ? error.message : 'unknown error'}.` });
+  }
+  const merchantChecks: MerchantCheck[] = merchants.map((merchant) => {
+    const hit = merchantHits.find((item) => merchantQueries(merchant).includes(item.query) && site?.domain.test(domain(item.url))
+      && `${item.url} ${item.title}`.toLowerCase().includes(nameToken(merchant)));
+    return { merchant, verified: Boolean(hit), url: hit?.url ?? null };
+  });
+  if (merchants.length) {
+    const confirmed = merchantChecks.filter((check) => check.verified).length;
+    log({ kind: 'search', text: `${confirmed} of ${merchants.length} merchants confirmed on ${cluster.processor} from their public pages${confirmed ? ` (${merchantChecks.filter((check) => check.verified).map((check) => check.merchant).join(', ')})` : ''}.` });
   }
 
   const sources = scoreSources(cluster, hits);
@@ -431,7 +500,7 @@ export async function runWorldResearch(
   const firstStrong = sources.find((source) => source.strong);
   if (!quote && firstStrong) quote = { url: firstStrong.url, text: firstStrong.snippet };
 
-  const ruling = ruleCluster(cluster, sources, quote);
+  const ruling = ruleCluster(cluster, sources, quote, merchantChecks);
   log({ kind: 'rule', text: ruling.headline });
-  return { clusterId: cluster.id, mode: 'live', startedAt, finishedAt: new Date().toISOString(), steps, sources: sources.slice(0, 8), ruling };
+  return { clusterId: cluster.id, mode: 'live', startedAt, finishedAt: new Date().toISOString(), steps, sources: sources.slice(0, 8), ruling, merchantChecks };
 }

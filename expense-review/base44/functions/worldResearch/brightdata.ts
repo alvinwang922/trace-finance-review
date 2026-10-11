@@ -6,7 +6,7 @@
  */
 
 const MCP_URL = 'https://mcp.brightdata.com/mcp';
-const MAX_QUERIES = 6;
+const MAX_QUERIES = 10;
 const MAX_URLS = 3;
 const MAX_PAGE_CHARS = 30_000;
 
@@ -27,7 +27,8 @@ async function callTool(token: string, tool: string, args: Record<string, unknow
     const headers: Record<string, string> = { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream' };
     if (session) headers['mcp-session-id'] = session;
     const body = notify ? { jsonrpc: '2.0', method, params } : { jsonrpc: '2.0', id: id++, method, params };
-    const response = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body) });
+    // A stalled request must not hang the review; callers fall back to the recorded run.
+    const response = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body), signal: AbortSignal.timeout(60_000) });
     session = response.headers.get('mcp-session-id') || session;
     if (!response.ok) throw new Error(`Bright Data returned HTTP ${response.status}`);
     if (notify) return null;

@@ -20,7 +20,7 @@ base44 secrets set BRIGHTDATA_API_KEY <your Bright Data API key>
 base44 functions deploy worldResearch
 ```
 
-Check the exact `secrets set` syntax with `base44 secrets --help`. The function rejects signed-out callers so visitors cannot spend the team's credits. It accepts only `{ action: 'search', queries }` (up to 6 queries) or `{ action: 'scrape', urls }` (up to 3 HTTPS URLs), and returns search hits or page text. It never receives employee names or card data.
+Check the exact `secrets set` syntax with `base44 secrets --help`. The function rejects signed-out callers so visitors cannot spend the team's credits. It accepts only `{ action: 'search', queries }` (up to 10 queries) or `{ action: 'scrape', urls }` (up to 3 HTTPS URLs), and returns search hits or page text. It never receives employee names or card data.
 
 ## Data and permissions
 

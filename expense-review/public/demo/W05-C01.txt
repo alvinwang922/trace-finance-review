@@ -6,13 +6,13 @@ Record ID: W05-C01
 Case group: W05
 Reference: MC-0404-3391
 Date: 2025-04-04
-Merchant: Fogline Kitchen
+Merchant: Bodega SF
 Employee: Maya Chen
 Card network: Mastercard
 Processor: Toast
 Amount: USD 103.20
 
-Mastercard posting TST*FOGLINE KITCHEN, settled amount.
+Mastercard posting TST*BODEGA SF, settled amount.
 
 This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
 Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

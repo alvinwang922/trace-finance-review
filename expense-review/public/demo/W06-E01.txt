@@ -4,9 +4,9 @@ Northstar Studio | April 2025
 EXPENSE SUBMISSION
 Record ID: W06-E01
 Case group: W06
-Reference: ANB-1207
+Reference: TS-1207
 Date: 2025-04-09
-Merchant: Ardent Noodle Bar
+Merchant: Taishoken San Francisco
 Employee: Sam Rivera
 Amount: USD 54.50
 
