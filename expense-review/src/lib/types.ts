@@ -13,6 +13,10 @@ export interface SourceRecord {
   description: string;
   fileName: string;
   reference?: string;
+  /** Card network from the statement (e.g. Visa). Optional; used for outside-event research. */
+  network?: string;
+  /** Payment processor or platform from the descriptor (e.g. Toast, InvoiceCloud). Optional. */
+  processor?: string;
 }
 
 export interface Dataset {

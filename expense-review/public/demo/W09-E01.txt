@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+EXPENSE SUBMISSION
+Record ID: W09-E01
+Case group: W09
+Reference: BR-0415
+Date: 2025-04-15
+Merchant: Bayview Rail
+Employee: Alex Morgan
+Amount: USD 62.00
+
+Return rail ticket for a client visit.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

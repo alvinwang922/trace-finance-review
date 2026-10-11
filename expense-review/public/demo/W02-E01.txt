@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+EXPENSE SUBMISSION
+Record ID: W02-E01
+Case group: W02
+Reference: BGE-4410
+Date: 2025-04-11
+Merchant: Bayline Gas & Electric
+Employee: Sam Rivera
+Amount: USD 412.75
+
+Studio electricity bill paid online with the company Visa.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

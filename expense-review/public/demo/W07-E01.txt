@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+EXPENSE SUBMISSION
+Record ID: W07-E01
+Case group: W07
+Reference: CS-5560
+Date: 2025-04-22
+Merchant: Cinder & Salt
+Employee: Jordan Ellis
+Amount: USD 132.00
+
+Client dinner entered from the receipt photo: $132.00.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

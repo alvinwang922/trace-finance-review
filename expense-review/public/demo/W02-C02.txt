@@ -1,0 +1,18 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+CARD STATEMENT LINE
+Record ID: W02-C02
+Case group: W02
+Reference: VISA-0412-6034
+Date: 2025-04-12
+Merchant: Bayline Gas & Electric
+Employee: Sam Rivera
+Card network: Visa
+Processor: InvoiceCloud
+Amount: USD 412.75
+
+Second Visa posting, same descriptor and amount, new transaction reference.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

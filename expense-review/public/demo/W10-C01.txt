@@ -1,0 +1,17 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+CARD STATEMENT LINE
+Record ID: W10-C01
+Case group: W10
+Reference: VISA-0425-9183
+Date: 2025-04-25
+Merchant: Kestrel Studio Rentals
+Employee: Sam Rivera
+Card network: Visa
+Amount: USD 325.00
+
+Visa posting KESTREL STUDIO.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

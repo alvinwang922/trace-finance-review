@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+RECEIPT EXCERPT
+Record ID: W03-R01
+Case group: W03
+Reference: LMI-2025-04
+Date: 2025-04-12
+Merchant: Larkspur Mutual Insurance
+Employee: Alex Morgan
+Amount: USD 268.00
+
+Online payment confirmation: premium, total $268.00.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+EXPENSE SUBMISSION
+Record ID: W04-E01
+Case group: W04
+Reference: MPA-88213
+Date: 2025-04-12
+Merchant: Marina Parking Authority
+Employee: Jordan Ellis
+Amount: USD 95.00
+
+Monthly studio parking permit paid online with the company Visa.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

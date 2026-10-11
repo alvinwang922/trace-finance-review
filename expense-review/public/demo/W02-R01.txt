@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+RECEIPT EXCERPT
+Record ID: W02-R01
+Case group: W02
+Reference: BGE-4410
+Date: 2025-04-11
+Merchant: Bayline Gas & Electric
+Employee: Sam Rivera
+Amount: USD 412.75
+
+Online payment confirmation: electricity, total $412.75.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

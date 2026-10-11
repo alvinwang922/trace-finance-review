@@ -253,3 +253,24 @@ export async function loadDecisions(datasetId: string): Promise<SavedDecision[]>
     throw readableError(error, 'load');
   }
 }
+
+/**
+ * Explicit cloud action for World context: asks the `worldResearch` backend function to
+ * search or read public pages through Bright Data. Only search terms built from network,
+ * processor and dates, or public URLs, are sent. No employee or card data.
+ */
+export async function invokeWorldResearch<T>(payload: { action: 'search'; queries: string[] } | { action: 'scrape'; urls: string[] }): Promise<T> {
+  try {
+    const base44 = await authenticatedClient();
+    const response = await base44.functions.invoke('worldResearch', payload);
+    const data = (response as { data?: unknown })?.data ?? response;
+    if (!data || typeof data !== 'object') throw new ReviewServiceError('Public-web research returned no data. Try the recorded run instead.');
+    if ('error' in data && typeof data.error === 'string') throw new ReviewServiceError(data.error);
+    return data as T;
+  } catch (error) {
+    if (error instanceof ReviewServiceError) throw error;
+    if (error instanceof Base44Error && error.status === 401) throw new Error('Sign in to this Base44 app, then try again.');
+    if (error instanceof Base44Error && error.status === 404) throw new Error('The worldResearch function is not deployed yet. Use the recorded run.');
+    throw new Error('Public-web research could not be completed. Try again, or show the recorded run.');
+  }
+}

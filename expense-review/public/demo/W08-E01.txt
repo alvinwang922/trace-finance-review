@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+EXPENSE SUBMISSION
+Record ID: W08-E01
+Case group: W08
+Reference: P9-0417
+Date: 2025-04-17
+Merchant: Pier 9 Print Shop
+Employee: Alex Morgan
+Amount: USD 286.50
+
+Event banners submitted at $286.50.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

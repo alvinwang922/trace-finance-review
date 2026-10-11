@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+RECEIPT EXCERPT
+Record ID: W05-R01
+Case group: W05
+Reference: FK-3391
+Date: 2025-04-03
+Merchant: Fogline Kitchen
+Employee: Maya Chen
+Amount: USD 86.00
+
+Itemized receipt photo: food $79.00, tax $7.00, total $86.00. Tip line blank.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

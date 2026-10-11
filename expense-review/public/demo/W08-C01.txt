@@ -1,0 +1,17 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+CARD STATEMENT LINE
+Record ID: W08-C01
+Case group: W08
+Reference: VISA-0418-4471
+Date: 2025-04-18
+Merchant: Pier 9 Print Shop
+Employee: Alex Morgan
+Card network: Visa
+Amount: USD 268.50
+
+Visa posting PIER 9 PRINT SHOP.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

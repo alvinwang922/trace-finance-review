@@ -1,0 +1,18 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+CARD STATEMENT LINE
+Record ID: W04-C02
+Case group: W04
+Reference: VISA-0413-0392
+Date: 2025-04-13
+Merchant: Marina Parking Authority
+Employee: Jordan Ellis
+Card network: Visa
+Processor: InvoiceCloud
+Amount: USD 95.00
+
+Second Visa posting, same descriptor and amount, new transaction reference.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

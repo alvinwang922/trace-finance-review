@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+RECEIPT EXCERPT
+Record ID: W01-R01
+Case group: W01
+Reference: NW-77310
+Date: 2025-04-11
+Merchant: Northgate Water District
+Employee: Maya Chen
+Amount: USD 184.20
+
+Online payment confirmation: water and sewer, total $184.20.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).
