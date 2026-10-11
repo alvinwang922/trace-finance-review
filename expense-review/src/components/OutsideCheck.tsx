@@ -13,6 +13,8 @@ export interface WorldResearch {
   running: string | null;
   liveSteps: ResearchStep[];
   hasRecorded: (clusterId: string) => boolean;
+  /** True once the saved runs for this dataset have loaded (or there are none). */
+  recordedReady: boolean;
   investigate: (cluster: WorldCluster) => Promise<void>;
   showRecorded: (cluster: WorldCluster) => void;
   /** Run once per group automatically: live when available, else the recorded run. */
@@ -91,6 +93,7 @@ export function useWorldResearch(dataset: Dataset, onToast: (message: string) =>
       void investigate(cluster);
     },
     hasRecorded: (clusterId) => Boolean(recorded?.runs.some((item) => item.clusterId === clusterId)),
+    recordedReady: Boolean(recorded),
   };
 }
 
@@ -133,7 +136,7 @@ export function OutsideCheck({ cluster, selectedCaseId, research, appliedCount, 
   const ruling = run?.ruling;
   const others = cluster.cases.filter((item) => item.caseId !== selectedCaseId);
   // Check automatically when the case opens; one group at a time, then the next.
-  useEffect(() => { research.ensure(cluster); }, [cluster.id, research.running]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { research.ensure(cluster); }, [cluster.id, research.running, research.recordedReady]); // eslint-disable-line react-hooks/exhaustive-deps
   return <div className={`outside-check ${ruling?.verdict ?? ''}`}>
     <div className="outside-check-top"><Globe2 size={15} /><strong>Outside check</strong><span>Before anyone is contacted</span></div>
     <h3>{cluster.title}</h3>
