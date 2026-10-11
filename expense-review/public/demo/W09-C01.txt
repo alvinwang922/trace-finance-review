@@ -1,0 +1,17 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+CARD STATEMENT LINE
+Record ID: W09-C01
+Case group: W09
+Reference: VISA-0416-2210
+Date: 2025-04-16
+Merchant: Bayview Rail
+Employee: Alex Morgan
+Card network: Visa
+Amount: USD 62.00
+
+Visa posting BAYVIEW RAIL.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

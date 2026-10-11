@@ -11,6 +11,17 @@ The app is deployed at https://trace-expense-review-f366fc9e.base44.app with wor
 3. Deploy `base44/entities/CaseDecision.json` with `base44 entities push` (or deploy the whole app with `base44 deploy --build --yes`). The config's build command creates the Vite `dist` directory. The current app and entity have already been deployed; these steps also apply when setting up another instance.
 4. In the app, explicitly choose sign-in before using cloud actions. A failed/expired session displays an error rather than redirecting automatically.
 
+## Outside check function (Bright Data)
+
+`functions/worldResearch` searches and reads public web pages through Bright Data's hosted MCP server for the Outside check in each review. It needs one secret and no Bright Data zone setup:
+
+```bash
+base44 secrets set BRIGHTDATA_API_KEY <your Bright Data API key>
+base44 functions deploy worldResearch
+```
+
+Check the exact `secrets set` syntax with `base44 secrets --help`. The function rejects signed-out callers so visitors cannot spend the team's credits. It accepts only `{ action: 'search', queries }` (up to 10 queries) or `{ action: 'scrape', urls }` (up to 3 HTTPS URLs), and returns search hits or page text. It never receives employee names or card data.
+
 ## Data and permissions
 
 - Local imports, case calculations and local decisions do not invoke Base44. The client is created lazily, with automatic analytics disabled.

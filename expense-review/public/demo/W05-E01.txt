@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+EXPENSE SUBMISSION
+Record ID: W05-E01
+Case group: W05
+Reference: BSF-3391
+Date: 2025-04-03
+Merchant: Bodega SF
+Employee: Maya Chen
+Amount: USD 86.00
+
+Client lunch entered from the receipt photo: $86.00.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

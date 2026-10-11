@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+RECEIPT EXCERPT
+Record ID: W10-R01
+Case group: W10
+Reference: KSR-0424
+Date: 2025-04-24
+Merchant: Kestrel Studio Rentals
+Employee: Sam Rivera
+Amount: USD 325.00
+
+Studio rental; total $325.00.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

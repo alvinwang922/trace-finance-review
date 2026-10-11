@@ -1,0 +1,18 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+CARD STATEMENT LINE
+Record ID: W03-C02
+Case group: W03
+Reference: VISA-0413-0148
+Date: 2025-04-13
+Merchant: Larkspur Mutual Insurance
+Employee: Alex Morgan
+Card network: Visa
+Processor: InvoiceCloud
+Amount: USD 268.00
+
+Second Visa posting, same descriptor and amount, new transaction reference.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

@@ -1,0 +1,18 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+CARD STATEMENT LINE
+Record ID: W06-C01
+Case group: W06
+Reference: MC-0410-1207
+Date: 2025-04-10
+Merchant: Taishoken San Francisco
+Employee: Sam Rivera
+Card network: Mastercard
+Processor: Toast
+Amount: USD 64.31
+
+Mastercard posting TST*TAISHOKEN SF, settled amount.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

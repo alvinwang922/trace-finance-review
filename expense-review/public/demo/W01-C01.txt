@@ -1,0 +1,18 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+CARD STATEMENT LINE
+Record ID: W01-C01
+Case group: W01
+Reference: VISA-0411-1183
+Date: 2025-04-11
+Merchant: Northgate Water District
+Employee: Maya Chen
+Card network: Visa
+Processor: InvoiceCloud
+Amount: USD 184.20
+
+Visa posting INVOICECLOUD*NORTHGATE WATER.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).

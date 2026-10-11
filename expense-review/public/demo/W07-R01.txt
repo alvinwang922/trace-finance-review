@@ -1,0 +1,16 @@
+FICTIONAL DEMO — NOT A REAL FINANCIAL DOCUMENT
+Northstar Studio | April 2025
+
+RECEIPT EXCERPT
+Record ID: W07-R01
+Case group: W07
+Reference: RW-5560
+Date: 2025-04-22
+Merchant: Ramenwell
+Employee: Jordan Ellis
+Amount: USD 132.00
+
+Itemized receipt photo: food $121.00, tax $11.00, total $132.00. Tip line blank.
+
+This source excerpt was created for the demo. Names, merchants, and transactions are fictional.
+Dates for W01–W04 fall inside a real, publicly reported Visa duplicate-settlement weekend (April 11–13, 2025).
