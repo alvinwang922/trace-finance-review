@@ -12,9 +12,9 @@ npm run dev
 
 The app uses fictional sample records by default. To connect the Base44 workspace locally, create `expense-review/.env.local` from `.env.example` and add the public app ID and app URL. Environment files are ignored and should never be committed.
 
-## World context (Bright Data)
+## Outside check (Bright Data)
 
-The **World context** page groups mismatches that share an outside factor across different employees (same card network or processor, same few days), then searches the public web through Bright Data for an outside cause before anyone is contacted. Example: four employees' Visa bill payments posted twice on April 11–12, 2025; Trace finds the public notice of Visa's duplicate-settlement weekend, clears all four, and drafts the disputes. Load it from the World context page with **Load the April 2025 card statement**.
+Inside each review, Trace checks whether the case shares an outside factor with other people's cases (same card network or processor, same few days). If it does, the case shows an **Outside check**: the other cases with the same factor, a **Check with Bright Data** button that searches and reads public pages for an outside cause, the ruling with its quoted source, and **Apply to all** to close the whole group at once. Example: four employees' Visa bill payments posted twice on April 11–12, 2025; Trace finds the public notice of Visa's duplicate-settlement weekend, clears all four, and drafts the disputes. The banner at the top of the review queue shows how many mismatches share an outside factor; on the September sample it offers **Try the April 2025 statement**.
 
 - Grouping, scoring and rulings are deterministic and unit-tested (`src/lib/worldContext.ts`). Every ruling links the public source it rests on; with no matching source, the cases stay with a reviewer.
 - Bright Data is only queried with the network, processor and dates. No employee or card data leaves the app.
