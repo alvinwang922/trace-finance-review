@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, ArrowUpRight, Check, CheckCheck, FileText, Globe2, ListFilter, Loader2, PlayCircle, Search, ShieldCheck, Sparkles, X } from 'lucide-react';
 import type { Dataset } from '../lib/types';
-import { describeWindow, runWorldResearch, type ResearchRun, type ResearchStep, type Ruling, type WorldCluster, type WorldContext } from '../lib/worldContext';
+import { describeWindow, runWorldResearch, type ResearchRun, type ResearchStep, type Ruling, type WorldCluster } from '../lib/worldContext';
 import { liveResearchAvailable, researchTransport } from '../lib/research';
 import { worldDemoDataset } from '../data/worldDemo';
 
@@ -133,31 +133,5 @@ export function OutsideCheck({ cluster, selectedCaseId, research, appliedCount, 
         <p className="world-draft-note"><ShieldCheck size={13} />Drafts only. Disputes and corrections wait for a person; nothing is sent or posted.</p>
       </div>
     </>}
-  </div>;
-}
-
-interface OutsideBannerProps {
-  dataset: Dataset;
-  context: WorldContext;
-  personPatterns: number;
-  onOpenCase: (caseId: string) => void;
-  onLoadDemo: () => void;
-}
-
-/** Top of the queue: how many mismatches share an outside factor, before anyone looks at people. */
-export function OutsideBanner({ dataset, context, personPatterns, onOpenCase, onLoadDemo }: OutsideBannerProps) {
-  const clustered = context.clusters.reduce((total, cluster) => total + cluster.cases.length, 0);
-  const all = clustered + context.isolated.length;
-  if (!context.clusters.length) {
-    if (!dataset.isDemo || dataset.id === worldDemoDataset.id) return null;
-    return <div className="outside-banner quiet"><Globe2 size={15} /><span>No mismatches here share an outside factor across people.</span><button className="text-button" onClick={onLoadDemo}>Try the April 2025 statement<ArrowRight size={12} /></button></div>;
-  }
-  return <div className="outside-banner">
-    <Globe2 size={16} />
-    <div>
-      <strong>{context.clusters.length} shared outside factor{context.clusters.length === 1 ? '' : 's'} cover {clustered} of {all} mismatches.</strong>
-      <span>Check them before contacting anyone.{personPatterns > 0 ? ` Grouped by person instead, ${personPatterns} employee${personPatterns === 1 ? ' would' : 's would'} be flagged.` : ''}</span>
-      <div className="outside-banner-links">{context.clusters.map((cluster) => <button key={cluster.id} className="text-button" onClick={() => onOpenCase(cluster.cases[0].caseId)}>{cluster.title}<ArrowRight size={12} /></button>)}</div>
-    </div>
   </div>;
 }

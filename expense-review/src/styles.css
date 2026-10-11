@@ -66,9 +66,4 @@
 .outside-check .world-steps{padding:9px 11px}.outside-check .world-step{font-size:9.5px}
 .outside-check .world-ruling{padding:12px 13px;gap:8px}.outside-check .world-ruling h3{font-size:12px}.outside-check .world-ruling>p,.outside-check .world-ruling blockquote,.outside-check .world-actions li{font-size:10px}
 .outside-check .world-ruling .button{align-self:flex-start}
-/* Queue banner and row tag */
-.outside-banner{display:flex;gap:10px;align-items:flex-start;margin:0 16px 12px;padding:11px 13px;border-radius:8px;background:#f4f8ec;border:1px solid #e3ebd5;color:#4f6b45}
-.outside-banner svg{margin-top:2px;flex-shrink:0}.outside-banner strong{display:block;font-size:11px;font-weight:650;color:#2d4a3c}.outside-banner span{display:block;font-size:10px;line-height:1.6;color:#6e8263;margin-top:2px}
-.outside-banner-links{display:flex;flex-direction:column;align-items:flex-start;gap:3px;margin-top:6px}.outside-banner-links .text-button{font-size:10px}
-.outside-banner.quiet{align-items:center;background:#fafbf8;border-color:#eef1e9;color:#8d9b7d}.outside-banner.quiet span{display:inline;margin:0;font-size:10px}.outside-banner.quiet .text-button{margin-left:auto;font-size:10px}
 .outside-label{display:inline-flex;align-items:center;gap:3px;margin-left:8px;padding:2px 5px;border-radius:3px;background:#eaf1e1;color:#5d7651;font-size:8px}
