@@ -60,3 +60,12 @@
 .world-isolated button{grid-template-columns:1.2fr 1fr 1.6fr 14px;width:100%;border:1px solid #f0f2ec;border-radius:6px;margin-top:6px}
 .world-guardrail{display:flex;gap:7px;align-items:center;font-size:10px;color:#8d9b7d}
 @media (max-width:760px){.world-cases button{grid-template-columns:1fr 1fr;row-gap:2px}.world-cases button svg{display:none}.world-isolated button{grid-template-columns:1fr}}
+
+/* Line-by-line comparison */
+.line-compare{margin-top:16px}.line-compare .section-label{margin-bottom:8px}
+.line-table{border:1px solid #edf0e7;border-radius:7px;overflow:hidden;font-size:10.5px}
+.line-head,.line-row{display:grid;grid-template-columns:1.2fr 1fr 1fr 18px;gap:8px;align-items:center;padding:7px 11px}
+.line-head{background:#fafbf8;color:#9aa88f;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+.line-row{border-top:1px solid #f0f2ec;color:#4f5f4a}.line-row span:nth-child(2),.line-row span:nth-child(3),.line-head span:nth-child(2),.line-head span:nth-child(3){text-align:right}
+.line-row.total{font-weight:600}.line-row.match svg{color:#6f9a5c}.line-row.differs{background:#fdf5f1}.line-row.differs svg{color:#b25f4a}.line-row.differs span:nth-child(2){color:#b25f4a;font-weight:600}
+.line-explanation{display:flex;gap:7px;align-items:flex-start;margin-top:9px;padding:10px 12px;border-radius:7px;background:#f4f8ec;border:1px solid #e3ebd5;font-size:10.5px;line-height:1.65;color:#3e5236}.line-explanation svg{margin-top:2px;color:var(--green)}

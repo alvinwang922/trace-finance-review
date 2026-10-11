@@ -3,6 +3,7 @@ import { ArrowDownToLine, ArrowRight, ArrowUpRight, Building2, Check, CheckCheck
 import { demoDataset } from './data/demo';
 import { analyzeDataset } from './lib/engine';
 import { parseCsvRecords, recordsToCsv } from './lib/csv';
+import { compareLineItems } from './lib/lineItems';
 import type { Dataset, ReviewCase, SourceRecord } from './lib/types';
 import { draftCaseExplanation, isBase44Configured, loadDecisions, loginToBase44, persistDecision } from './lib/base44';
 import { findWorldContext } from './lib/worldContext';
@@ -28,7 +29,9 @@ function investigateCase(selected: ReviewCase, records: SourceRecord[], allCases
   const hasReceipt = records.some(r => r.source === 'receipt');
   const hasCard = records.some(r => r.source === 'card');
   const hasExpense = records.some(r => r.source === 'expense');
+  const lines = compareLineItems(records);
   const signals = [
+    lines?.explanation ?? null,
     gapShare >= 15 && gapShare <= 25 ? `The gap is ${gapShare}% of the comparison amount, a range worth checking for an omitted tip or fee.` : null,
     gap > 0 && gap % 900 === 0 ? 'The difference is divisible by 9. Check for a transposed or re-keyed amount before assuming intent.' : null,
     !hasReceipt ? 'No receipt is present in the supplied records, so the cause cannot be tested from source evidence yet.' : null,
@@ -41,7 +44,7 @@ function investigateCase(selected: ReviewCase, records: SourceRecord[], allCases
     recurring: sameEmployeeCases.length ? `${selected.employee} appears in ${sameEmployeeCases.length} other review case${sameEmployeeCases.length === 1 ? '' : 's'} across ${new Set(sameEmployeeCases.map(c => c.merchant)).size} merchant${new Set(sameEmployeeCases.map(c => c.merchant)).size === 1 ? '' : 's'}. Compare the cases for a repeatable process issue before escalating.` : `No other review case for ${selected.employee} was found in the current dataset.`,
     concern: selected.differenceCents ? `The records support a ${money(gap, selected.currency)} difference that needs an explanation before anyone is blamed.` : 'The records do not establish an unresolved amount difference.',
     innocent: hasReceipt && hasCard ? 'An innocent explanation remains possible: tip, tax, timing, refund, split charge, or a data-entry mistake.' : 'The supplied records are incomplete, so an innocent explanation cannot be ruled out.',
-    question: selected.nextQuestion || `Your ${hasCard ? 'card charge' : 'accounting entry'} and ${hasReceipt ? 'receipt' : 'submitted amount'} do not line up. Could you confirm what the difference represents and share any updated evidence?`,
+    question: lines?.question || selected.nextQuestion || `Your ${hasCard ? 'card charge' : 'accounting entry'} and ${hasReceipt ? 'receipt' : 'submitted amount'} do not line up. Could you confirm what the difference represents and share any updated evidence?`,
   };
 }
 function attentionKind(kind: string): boolean { return ['amount_difference', 'missing_evidence', 'ambiguous'].includes(kind); }
@@ -144,6 +147,8 @@ function App() {
   const filteredRecords = dataset.records.filter(r => `${r.merchant} ${r.employee} ${r.groupId} ${r.id} ${r.source}`.toLowerCase().includes(search.toLowerCase()));
   const selected = filtered.find(c => c.id === selectedId) || filtered[0];
   const relatedRecords = selected ? dataset.records.filter(r => selected.recordIds.includes(r.id)) : [];
+  const lineComparison = selected ? compareLineItems(relatedRecords) : null;
+  const caseQuestion = lineComparison?.question || selected?.nextQuestion || null;
   const selectedDecision = selected ? decisions[keyFor(selected)] : undefined;
   const newResponses = responses.filter(response => response.status === 'new');
   const selectedResponse = responses.find(response => response.id === selectedResponseId);
@@ -342,9 +347,10 @@ function App() {
               <div className={`finding-box ${selected.kind}`}><div className="finding-title"><Sparkles size={16} /><strong>What the records show</strong></div><p>{selected.summary}</p></div>
               <div className="section-label">COMPARE THE EVIDENCE<span>{relatedRecords.length} records · side by side</span></div>
               <div className="evidence-list evidence-grid">{relatedRecords.map((r, i) => <button className="evidence-item" key={r.id} onClick={() => setSource(r)}><span className="evidence-number">{String(i + 1).padStart(2, '0')}</span><div><strong>{sourceLabels[r.source]}</strong><span>{r.reference || r.id}<i />{recordDate(r.date)}</span></div><strong className={r.source === 'refund' ? 'refund-value' : ''}>{r.source === 'refund' ? '−' : ''}{money(r.amountCents, r.currency)}</strong><ArrowUpRight size={13} /></button>)}</div>
-              {selected.differenceCents !== null && <div className="difference-total"><span>{selected.kind === 'amount_difference' ? 'Unexplained difference' : 'Difference after comparison'}</span><strong>{money(Math.abs(selected.differenceCents), selected.currency)}</strong></div>}
+              {selected.differenceCents !== null && <div className="difference-total"><span>{selected.kind === 'amount_difference' ? (lineComparison?.cause ? 'Difference, cause found line by line' : 'Unexplained difference') : 'Difference after comparison'}</span><strong>{money(Math.abs(selected.differenceCents), selected.currency)}</strong></div>}
+              {lineComparison && <div className={`line-compare ${lineComparison.cause ? 'explained' : ''}`}><div className="section-label">LINE BY LINE<span>Expense claim vs receipt</span></div><div className="line-table"><div className="line-head"><span>Line</span><span>Claimed</span><span>Receipt</span><span /></div>{lineComparison.rows.map(row => <div key={row.category} className={`line-row ${row.status} ${row.category}`}><span>{row.label}</span><span>{row.claimedCents === null ? '—' : money(row.claimedCents, selected.currency)}</span><span>{row.receiptCents === null ? '—' : money(row.receiptCents, selected.currency)}</span><span>{row.status === 'match' ? <Check size={13} /> : row.status === 'differs' ? <X size={13} /> : null}</span></div>)}</div>{lineComparison.explanation && <p className="line-explanation"><Sparkles size={13} />{lineComparison.explanation}</p>}</div>}
               <div className="evidence-notes">{selected.evidence.filter(e => !/^(expense|receipt|card|order|refund):/.test(e)).map((e, i) => <p key={i}><Check size={13} />{e}</p>)}</div>
-              {selected.nextQuestion && <div className="question-box"><div><MessageSquare size={15} /><strong>One question to move this forward</strong></div><p>{selected.nextQuestion}</p><button className="text-button" onClick={async () => { try { await navigator.clipboard.writeText(selected.nextQuestion!); setToast('Question copied. Nothing has been sent.'); } catch { setToast('Select and copy the question text above.'); } }}>Copy question<ArrowUpRight size={12} /></button></div>}
+              {caseQuestion && <div className="question-box"><div><MessageSquare size={15} /><strong>One question to move this forward</strong></div><p>{caseQuestion}</p><button className="text-button" onClick={async () => { try { await navigator.clipboard.writeText(caseQuestion); setToast('Question copied. Nothing has been sent.'); } catch { setToast('Select and copy the question text above.'); } }}>Copy question<ArrowUpRight size={12} /></button></div>}
               <div className="outreach-actions case-outreach"><strong>Request information</strong><p>Send the neutral question to the employee after choosing a verified contact.</p><div><button className="button secondary" onClick={() => { setOutreachChannel('email'); setOutreachOpen(true); }}><MessageSquare size={15} />Send email</button><button className="button secondary" onClick={() => { setOutreachChannel('text'); setOutreachOpen(true); }}><MessageSquare size={15} />Send text</button></div></div>
               {aiResult && <div className="ai-result"><div><Sparkles size={16} /><strong>AI draft · Check against the evidence</strong></div><p>{aiResult.explanation}</p>{aiResult.question && <p><strong>Suggested question:</strong> {aiResult.question}</p>}</div>}
               <button className="button ai-button" onClick={draftExplanation} disabled={aiBusy} title="Draft an evidence-based explanation from this case">{aiBusy ? <Loader2 className="spin" size={15} /> : <Sparkles size={15} />}{aiBusy ? 'Drafting from the evidence…' : 'Draft explanation'}<span>{isBase44Configured ? 'Base44 / local fallback' : 'Local evidence draft'}</span></button>
